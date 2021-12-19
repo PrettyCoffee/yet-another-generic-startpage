@@ -1,8 +1,8 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
 
-import logo from './logo.svg';
-import { Providers } from './Providers';
+import logo from "./logo.svg"
+import { Providers } from "./Providers"
 
 const Wrapper = styled.div`
   text-align: center;
@@ -20,7 +20,7 @@ const Header = styled.header`
     color: ${color.fg.base};
   `}
 `
-  
+
 const Logo = styled.img`
   max-width: 20rem;
   pointer-events: none;
@@ -36,7 +36,7 @@ const Logo = styled.img`
 `
 
 const Link = styled.a`
-  color: ${({theme: {color}}) => color.primary.fg};
+  color: ${({ theme: { color } }) => color.primary.fg};
 `
 
 function App() {
@@ -52,13 +52,13 @@ function App() {
             href="https://prettycoffee.github.io/startpage"
             target="_blank"
             rel="noopener noreferrer"
-            >
+          >
             Read the docs
           </Link>
         </Header>
       </Wrapper>
     </Providers>
-  );
+  )
 }
 
-export default App;
+export default App
