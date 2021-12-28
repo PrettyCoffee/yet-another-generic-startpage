@@ -63,6 +63,8 @@ module.exports = {
     "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-use-before-define": ["error"],
     "jsx-a11y/no-onchange": "off", // deprecated rule, will be deleted in a future release
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/label-has-associated-control": "off",
 
     "import/order": ["error", importOrderRules],
     "prettier/prettier": ["error", prettierRules],

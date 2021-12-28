@@ -2,11 +2,13 @@ import { PropsWithChildren } from "react"
 
 import { css, Global, ThemeProvider as EmotionTheme } from "@emotion/react"
 import { getTheme } from "@startpage/preset"
-import { ThemeConsumer, ThemeProvider } from "@startpage/theming"
+import { ThemeConsumer, ThemeProvider as StpgTheme } from "@startpage/theming"
 
 const globalStyles = css`
+  @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap");
+
   body {
-    font-family: sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
 
   *,
@@ -17,10 +19,11 @@ const globalStyles = css`
   html,
   body,
   #root {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
     margin: 0;
+    overflow: hidden;
   }
   input,
   button,
@@ -28,10 +31,17 @@ const globalStyles = css`
   select {
     font: inherit;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+    :visited {
+      color: inherit;
+    }
+  }
 `
 
-export const Providers = ({ children }: PropsWithChildren<unknown>) => (
-  <ThemeProvider initialTheme={getTheme("nord")}>
+export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => (
+  <StpgTheme initialTheme={getTheme("nord")} persistTheme={true}>
     <ThemeConsumer>
       {({ theme }) => (
         <EmotionTheme theme={theme}>
@@ -40,5 +50,5 @@ export const Providers = ({ children }: PropsWithChildren<unknown>) => (
         </EmotionTheme>
       )}
     </ThemeConsumer>
-  </ThemeProvider>
+  </StpgTheme>
 )
