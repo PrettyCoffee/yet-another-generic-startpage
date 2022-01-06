@@ -1,7 +1,7 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { Surface } from "../components/Surface"
+import { Surface } from "../components"
 import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
 import { General } from "./General"
