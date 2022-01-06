@@ -72,6 +72,10 @@ export const initialBookmarks: BookmarkGroup[] = [
     label: "Sauce",
     bookmarks: [
       {
+        label: "author",
+        url: "https://prettycoffee.github.io/",
+      },
+      {
         label: "Gif",
         url: "https://designyoutrust.com/2019/05/the-chill-and-retro-motion-pixel-art-of-motocross-saito/",
       },
