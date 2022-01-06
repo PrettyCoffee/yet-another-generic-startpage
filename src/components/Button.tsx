@@ -13,33 +13,39 @@ const NativeButton = styled.button`
     justify-content: center;
     gap: ${space.small};
 
-    cursor: pointer;
     color: inherit;
     background-color: transparent;
     outline: none;
-    border: none;
-    border: ${color.fg.base} solid ${space.smallest};
+    border: solid ${space.smallest};
 
     > svg {
       height: 1.2rem;
     }
 
-    :hover {
-      background-color: ${color.bg.highlight};
+    :enabled {
+      cursor: pointer;
+      border-color: ${color.fg.base};
+      :hover {
+        background-color: ${color.bg.highlight};
+      }
+      :focus-visible {
+        border-color: ${color.primary.base};
+      }
     }
-    :focus-visible {
-      border-color: ${color.primary.base};
+
+    :disabled {
+      cursor: default;
+      color: ${color.fg.shade};
+      border-color: ${color.fg.shade};
     }
   `}
 `
 
 type ButtonProps = {
   onClick?: () => void
+  disabled?: boolean
 }
 
-export const Button = ({
-  onClick,
-  children,
-}: PropsWithChildren<ButtonProps>) => (
-  <NativeButton onClick={onClick}>{children}</NativeButton>
+export const Button = ({ ...props }: PropsWithChildren<ButtonProps>) => (
+  <NativeButton {...props} />
 )
