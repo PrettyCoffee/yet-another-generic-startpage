@@ -6,17 +6,29 @@ import { VisuallyHidden } from "."
 
 const Button = styled.button`
   ${({ theme: { color, space } }) => css`
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none;
     width: calc(${space.medium} * 2);
     height: calc(${space.medium} * 2);
-    color: ${color.primary.fg};
 
-    :focus-visible,
-    :hover {
-      color: ${color.primary.base};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    :enabled {
+      cursor: pointer;
+      color: ${color.primary.fg};
+
+      :focus-visible,
+      :hover {
+        color: ${color.primary.base};
+      }
+    }
+
+    :disabled {
+      color: ${color.fg.shade};
     }
 
     > svg {
@@ -30,10 +42,16 @@ type IconButtonProps = {
   label?: string
   onClick?: () => void
   icon: Icon
+  disabled?: boolean
 }
 
-export const IconButton = ({ label, onClick, icon: Icon }: IconButtonProps) => (
-  <Button onClick={onClick}>
+export const IconButton = ({
+  label,
+  onClick,
+  icon: Icon,
+  disabled,
+}: IconButtonProps) => (
+  <Button onClick={onClick} title={label} disabled={disabled}>
     <Icon aria-hidden />
     {label ? <VisuallyHidden>{label}</VisuallyHidden> : null}
   </Button>
