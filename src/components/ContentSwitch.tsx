@@ -29,8 +29,11 @@ const ButtonPosition = styled.div`
   position: fixed;
   top: 0px;
   right: 0px;
-  > button:hover > svg {
-    transform: scale(1.3);
+  > button:hover,
+  > button:focus-visible {
+    > svg {
+      transform: scale(1.3);
+    }
   }
 `
 
