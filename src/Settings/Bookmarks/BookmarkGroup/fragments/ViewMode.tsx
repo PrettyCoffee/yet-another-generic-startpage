@@ -9,7 +9,7 @@ const GroupName = styled.h3`
   margin: 0;
 `
 
-type ViewModeProps = GroupTitleProps & {
+type ViewModeProps = Pick<GroupTitleProps, "label" | "bookmarkCount"> & {
   onRemove: () => void
   onEdit: () => void
   addBookmark: () => void

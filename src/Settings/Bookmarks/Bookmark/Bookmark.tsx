@@ -1,25 +1,23 @@
-import { Bookmark as BookmarkType, useBookmarks } from "@startpage/bookmarks"
+import {
+  Bookmark as BookmarkProps,
+  BookmarkWithoutId,
+  useBookmarks,
+} from "@startpage/bookmarks"
 
 import { useEditMode } from "../fragments/EditModeContext"
 import { ItemEditMode } from "./fragments/ItemEditMode"
 import { ItemViewMode } from "./fragments/ItemViewMode"
 
-type BookmarkProps = BookmarkType & {
-  group: string
-}
-
-export const Bookmark = ({ group, label, url }: BookmarkProps) => {
+export const Bookmark = ({ id, label, url }: BookmarkProps) => {
   const { editElement, setEditElement } = useEditMode()
   const { removeBookmark } = useBookmarks()
 
-  const bookmarkId = group + label + url
+  const editModeIsActive = editElement === id
 
-  const editModeIsActive = editElement === bookmarkId
+  const toggleMode = () => setEditElement(editModeIsActive ? undefined : id)
 
-  const toggleMode = () =>
-    setEditElement(editModeIsActive ? undefined : bookmarkId)
-  const handleRemove = () => removeBookmark(group, label)
-  const handleSave = (bookmark: BookmarkType) => {
+  const handleRemove = () => removeBookmark(id)
+  const handleSave = (bookmark: BookmarkWithoutId) => {
     console.log(bookmark)
     toggleMode()
   }

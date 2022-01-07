@@ -1,4 +1,4 @@
-import { BookmarkGroup } from "@startpage/bookmarks"
+import { InitialBookmarkGroup } from "@startpage/bookmarks"
 import { SearchEngineName } from "@startpage/search"
 
 export const defaultSettings = {
@@ -8,7 +8,7 @@ export const defaultSettings = {
   searchEngine: "google" as SearchEngineName,
 }
 
-export const initialBookmarks: BookmarkGroup[] = [
+export const initialBookmarks: InitialBookmarkGroup[] = [
   {
     label: "Reddit",
     bookmarks: [

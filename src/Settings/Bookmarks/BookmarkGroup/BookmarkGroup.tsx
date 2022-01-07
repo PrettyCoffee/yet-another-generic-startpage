@@ -11,12 +11,12 @@ const Wrapper = styled.div`
   `}
 `
 
-export const BookmarkGroup = ({ label, bookmarks }: Group) => (
+export const BookmarkGroup = ({ id, label, bookmarks }: Group) => (
   <>
-    <GroupTitle label={label} bookmarkCount={bookmarks.length} />
+    <GroupTitle id={id} label={label} bookmarkCount={bookmarks.length} />
     <Wrapper>
       {bookmarks.map(bookmark => (
-        <Bookmark key={label + bookmark.label} group={label} {...bookmark} />
+        <Bookmark key={bookmark.id} {...bookmark} />
       ))}
     </Wrapper>
   </>

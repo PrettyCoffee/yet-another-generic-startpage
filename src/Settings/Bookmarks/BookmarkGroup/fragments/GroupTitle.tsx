@@ -5,27 +5,26 @@ import { EditMode } from "./EditMode"
 import { ViewMode } from "./ViewMode"
 
 export type GroupTitleProps = {
+  id: string
   label: string
   bookmarkCount: number
 }
 
-export const GroupTitle = ({ label, bookmarkCount }: GroupTitleProps) => {
+export const GroupTitle = ({ id, label, bookmarkCount }: GroupTitleProps) => {
   const { editElement, setEditElement } = useEditMode()
   const { removeGroup, addBookmark } = useBookmarks()
 
-  const groupId = label
-
-  const handleEdit = () => setEditElement(groupId)
+  const handleEdit = () => setEditElement(id)
   const handleSave = (label: string) => {
     console.log(label)
     setEditElement()
   }
   const handleAbort = () => setEditElement()
-  const handleRemove = () => removeGroup(label)
+  const handleRemove = () => removeGroup(id)
   const handleNewBookmark = () =>
-    addBookmark(label, { label: "New bookmark", url: "" })
+    addBookmark(id, { label: "New bookmark", url: "" })
 
-  if (editElement === groupId)
+  if (editElement === id)
     return <EditMode label={label} onSave={handleSave} onAbort={handleAbort} />
 
   return (

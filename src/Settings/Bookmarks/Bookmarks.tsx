@@ -14,7 +14,7 @@ export const Bookmarks = () => {
     <EditModeProvider>
       <Section title="Bookmarks">
         {bookmarkGroups.map(group => (
-          <BookmarkGroup key={group.label} {...group} />
+          <BookmarkGroup key={group.id} {...group} />
         ))}
         <Button onClick={handleNewGroup} disabled={bookmarkGroups.length >= 4}>
           New Group <Plus />

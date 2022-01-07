@@ -27,7 +27,7 @@ const Actions = styled.div`
   width: max-content;
 `
 
-type ItemViewModeProps = Bookmark & {
+type ItemViewModeProps = Pick<Bookmark, "label" | "url"> & {
   onEdit: () => void
   onRemove: () => void
 }
