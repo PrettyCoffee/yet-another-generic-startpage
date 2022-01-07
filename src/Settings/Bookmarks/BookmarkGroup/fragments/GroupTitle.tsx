@@ -12,11 +12,11 @@ export type GroupTitleProps = {
 
 export const GroupTitle = ({ id, label, bookmarkCount }: GroupTitleProps) => {
   const { editElement, setEditElement } = useEditMode()
-  const { removeGroup, addBookmark } = useBookmarks()
+  const { removeGroup, addBookmark, editGroup } = useBookmarks()
 
   const handleEdit = () => setEditElement(id)
-  const handleSave = (label: string) => {
-    console.log(label)
+  const handleSave = (newLabel: string) => {
+    editGroup(id, newLabel)
     setEditElement()
   }
   const handleAbort = () => setEditElement()

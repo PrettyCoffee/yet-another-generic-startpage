@@ -38,6 +38,7 @@ export const Theme = () => {
       color: colorScheme,
       inverted: invert,
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [baseColors])
 
   const setColor = (key: keyof BaseColors, value: string) => {

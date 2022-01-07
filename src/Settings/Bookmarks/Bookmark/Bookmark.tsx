@@ -10,7 +10,7 @@ import { ItemViewMode } from "./fragments/ItemViewMode"
 
 export const Bookmark = ({ id, label, url }: BookmarkProps) => {
   const { editElement, setEditElement } = useEditMode()
-  const { removeBookmark } = useBookmarks()
+  const { editBookmark, removeBookmark } = useBookmarks()
 
   const editModeIsActive = editElement === id
 
@@ -18,7 +18,7 @@ export const Bookmark = ({ id, label, url }: BookmarkProps) => {
 
   const handleRemove = () => removeBookmark(id)
   const handleSave = (bookmark: BookmarkWithoutId) => {
-    console.log(bookmark)
+    editBookmark(id, bookmark)
     toggleMode()
   }
   const handleAbort = () => toggleMode()
