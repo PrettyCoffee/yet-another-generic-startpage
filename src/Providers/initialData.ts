@@ -10,78 +10,78 @@ export const defaultSettings = {
 
 export const initialBookmarks: InitialBookmarkGroup[] = [
   {
-    label: "Reddit",
+    label: "reddit",
     bookmarks: [
       {
         label: "r/startpages",
         url: "https://www.reddit.com/r/startpages/",
       },
       {
-        label: "r/unixporn",
-        url: "https://www.reddit.com/r/unixporn/",
+        label: "r/typescript",
+        url: "https://www.reddit.com/r/typescript/",
       },
       {
-        label: "r/rainmeter",
-        url: "https://www.reddit.com/r/rainmeter/",
-      },
-      {
-        label: "r/AnimalsBeingDerps",
-        url: "https://www.reddit.com/r/AnimalsBeingDerps/",
+        label: "r/reactjs",
+        url: "https://www.reddit.com/r/reactjs/",
       },
     ],
   },
   {
-    label: "Design",
+    label: "design tools",
     bookmarks: [
       {
-        label: "PixlrX",
+        label: "pixlrx",
         url: "https://pixlr.com/x/",
       },
       {
-        label: "AI Image Enlarger",
+        label: "image enlarger",
         url: "https://bigjpg.com/en",
       },
       {
-        label: "Img to Svg Converter",
-        url: "https://picsvg.com/",
+        label: "haikei",
+        url: "https://app.haikei.app/",
+      },
+      {
+        label: "css gradients",
+        url: "https://larsenwork.com/easing-gradients/",
       },
     ],
   },
   {
-    label: "Music",
+    label: "worth reading",
     bookmarks: [
       {
-        label: "i wanna be a cowboy",
-        url: "https://www.youtube.com/watch?v=8zWz92f_HGs",
+        label: "happy hues",
+        url: "https://www.happyhues.co/palettes/4",
       },
       {
-        label: "let the bodies hit the floor",
-        url: "https://www.youtube.com/watch?v=b--VKaCB9u0",
+        label: "styled-components",
+        url: "https://www.joshwcomeau.com/react/demystifying-styled-components/",
       },
       {
-        label: "Nobody Kanna Cross It",
-        url: "https://www.youtube.com/watch?v=2wqTnwJGvtc",
-      },
-      {
-        label: "Smug Dancin",
-        url: "https://www.youtube.com/watch?v=eNZ9Od1jQ4Q",
+        label: "react docs",
+        url: "https://reactjs.org/docs/getting-started.html",
       },
     ],
   },
   {
-    label: "Sauce",
+    label: "sources",
     bookmarks: [
       {
-        label: "author",
-        url: "https://prettycoffee.github.io/",
+        label: "icons",
+        url: "https://feathericons.com/",
       },
       {
-        label: "Gif",
+        label: "gif",
         url: "https://designyoutrust.com/2019/05/the-chill-and-retro-motion-pixel-art-of-motocross-saito/",
       },
       {
         label: "@startpage",
         url: "https://prettycoffee.github.io/startpage",
+      },
+      {
+        label: "author",
+        url: "https://prettycoffee.github.io/",
       },
     ],
   },
