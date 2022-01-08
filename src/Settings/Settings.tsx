@@ -4,8 +4,8 @@ import styled from "@emotion/styled/macro"
 import { Surface } from "../components"
 import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
+import { Design } from "./Design"
 import { General } from "./General"
-import { Theme } from "./Theme"
 
 const SettingsSurface = styled(Surface)`
   ${({ theme: { space } }) => css`
@@ -19,7 +19,7 @@ const SettingsSurface = styled(Surface)`
 export const Settings = () => (
   <SettingsSurface>
     <General />
-    <Theme />
+    <Design />
     <Bookmarks />
     <Backup />
   </SettingsSurface>
