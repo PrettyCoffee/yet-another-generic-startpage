@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import styled from "@emotion/styled/macro"
-import { storageBackup } from "@startpage/local-storage"
+import { storageBackup, useStoragePrefix } from "@startpage/local-storage"
 import { Download } from "react-feather"
 
 import { Button, Section, FileInput } from "../components"
@@ -14,7 +14,9 @@ const Layout = styled.div`
 
 export const Backup = () => {
   const [importValid, setImportValid] = useState<boolean>()
-  const Backup = storageBackup()
+  const prefix = useStoragePrefix()
+  const keys = Object.keys(localStorage).filter(key => key.startsWith(prefix))
+  const Backup = storageBackup(keys)
 
   const onImport = (file: File) => {
     Backup.restore(file).then(setImportValid)
