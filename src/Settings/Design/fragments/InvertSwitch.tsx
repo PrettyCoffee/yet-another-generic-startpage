@@ -12,7 +12,7 @@ export const InvertSwitch = ({ colors, updateColors }: ColorSetStateProps) => {
     <Switch
       checked={colors.inverted}
       onChange={handleInvert}
-      label="Invert theme"
+      label="Invert colors"
     />
   )
 }
