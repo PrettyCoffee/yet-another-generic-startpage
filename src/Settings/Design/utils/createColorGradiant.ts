@@ -1,16 +1,12 @@
 import Color from "color"
 
-type HSL = {
-  h: number
-  s: number
-  l: number
+type RGB = {
+  r: number
+  g: number
+  b: number
 }
 
-const getHslValues = (color: string): HSL => ({
-  h: Color(color).hsl().hue(),
-  s: Color(color).hsl().saturationv(),
-  l: Color(color).hsl().lightness(),
-})
+const getRgbValues = (color: string) => Color(color).object() as RGB
 
 const calcStep = (start: number, end: number, steps: number, step: number) => {
   if (start >= end) {
@@ -24,12 +20,12 @@ const calcStep = (start: number, end: number, steps: number, step: number) => {
   return start + change
 }
 
-const getColorStep = (start: HSL, end: HSL, steps: number, step: number) => {
-  const hue = calcStep(start.h, end.h, steps, step)
-  const saturation = calcStep(start.s, end.s, steps, step)
-  const lightness = calcStep(start.l, end.l, steps, step)
+const getColorStep = (start: RGB, end: RGB, steps: number, step: number) => {
+  const red = calcStep(start.r, end.r, steps, step)
+  const green = calcStep(start.g, end.g, steps, step)
+  const blue = calcStep(start.b, end.b, steps, step)
 
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`
+  return `rgb(${red}, ${green}, ${blue})`
 }
 
 export const createColorGradiant = (
@@ -38,8 +34,8 @@ export const createColorGradiant = (
   steps: number
 ) => {
   if (steps < 2) return [start]
-  const startHsl = getHslValues(start)
-  const endHsl = getHslValues(end)
+  const startHsl = getRgbValues(start)
+  const endHsl = getRgbValues(end)
 
   const colors = []
   for (let step = 0; step < steps; step++)
