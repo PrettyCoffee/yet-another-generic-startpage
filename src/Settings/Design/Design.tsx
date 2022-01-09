@@ -10,6 +10,7 @@ import {
   InvertSwitch,
   ShadowStyle,
 } from "./fragments"
+import { BorderRadiusSlider } from "./fragments/BorderRadiusSlider"
 import { ColorSet, extractColorSetFromTheme } from "./utils/ColorSet"
 
 export const Design = () => {
@@ -39,8 +40,9 @@ export const Design = () => {
       <h3>Colors</h3>
       <ColorFields {...sharedProps} />
       <br />
-      <h3>Shadow</h3>
+      <h3>Window</h3>
       <ShadowStyle />
+      <BorderRadiusSlider />
     </Section>
   )
 }

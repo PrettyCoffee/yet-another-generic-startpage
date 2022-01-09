@@ -9,6 +9,7 @@ export const defaultSettings = {
   searchPlaceholder: "Search the web",
   searchEngine: "google" as SearchEngineName,
   surfaceShadow: undefined as ShadowOptions | undefined,
+  surfaceBorderRadius: 0,
 }
 
 export const initialBookmarks: InitialBookmarkGroup[] = [

@@ -5,11 +5,17 @@ import styled from "@emotion/styled/macro"
 
 import { useSettings } from "../Providers"
 
-export const Container = styled.div<{ shadow?: string }>`
-  ${({ theme: { color, space }, shadow }) => css`
+type ContainerProps = {
+  shadow?: string
+  borderRadius: number
+}
+
+export const Container = styled.div<ContainerProps>`
+  ${({ theme: { color, space }, shadow, borderRadius }) => css`
     display: flex;
     color: ${color.fg.surface};
     background-color: ${color.bg.surface};
+    border-radius: ${borderRadius}px;
 
     box-shadow: ${shadow};
     border: ${space.smallest} solid ${color.primary.base};
@@ -22,7 +28,13 @@ type SurfaceProps = {
 }
 
 export const Surface = ({ ...delegated }: PropsWithChildren<SurfaceProps>) => {
-  const [{ surfaceShadow }] = useSettings()
+  const [{ surfaceShadow, surfaceBorderRadius }] = useSettings()
 
-  return <Container shadow={surfaceShadow?.shadow} {...delegated} />
+  return (
+    <Container
+      shadow={surfaceShadow?.shadow}
+      borderRadius={surfaceBorderRadius}
+      {...delegated}
+    />
+  )
 }
