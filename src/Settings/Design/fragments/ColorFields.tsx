@@ -2,6 +2,7 @@ import { BaseColors } from "@startpage/preset"
 
 import { ColorInput } from "../../../components"
 import { ColorSetStateProps } from "../utils/ColorSet"
+import { CenterLayout } from "./CenterLayout"
 
 export const ColorFields = ({ colors, updateColors }: ColorSetStateProps) => {
   const setColor = (key: keyof BaseColors, value: string) => {
@@ -22,7 +23,7 @@ export const ColorFields = ({ colors, updateColors }: ColorSetStateProps) => {
   const setSecondary = (value: string) => setColor("secondary", value)
 
   return (
-    <>
+    <CenterLayout>
       <ColorInput label="Background" value={colors.bg} onChange={setBg} />
       <ColorInput label="Foreground" value={colors.fg} onChange={setFg} />
       <ColorInput
@@ -35,6 +36,6 @@ export const ColorFields = ({ colors, updateColors }: ColorSetStateProps) => {
         value={colors.secondary}
         onChange={setSecondary}
       />
-    </>
+    </CenterLayout>
   )
 }

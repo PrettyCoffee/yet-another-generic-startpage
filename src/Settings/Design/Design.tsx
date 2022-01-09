@@ -4,9 +4,12 @@ import { createColorScheme, getInvertedColorScheme } from "@startpage/preset"
 import { useTheme } from "@startpage/theming"
 
 import { Section } from "../../components"
-import { ColorFields } from "./fragments/ColorFields"
-import { ColorPresets } from "./fragments/ColorPresets"
-import { InvertSwitch } from "./fragments/InvertSwitch"
+import {
+  ColorFields,
+  ColorPresets,
+  InvertSwitch,
+  ShadowStyle,
+} from "./fragments"
 import { ColorSet, extractColorSetFromTheme } from "./utils/ColorSet"
 
 export const Design = () => {
@@ -29,14 +32,15 @@ export const Design = () => {
 
   return (
     <Section title="Design">
-      <h3>Colors</h3>
       <br />
       <ColorPresets {...sharedProps} />
       <br />
       <InvertSwitch {...sharedProps} />
-      <br />
+      <h3>Colors</h3>
       <ColorFields {...sharedProps} />
       <br />
+      <h3>Shadow</h3>
+      <ShadowStyle />
     </Section>
   )
 }
