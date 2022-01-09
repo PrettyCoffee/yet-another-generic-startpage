@@ -13,8 +13,6 @@ const SettingsSurface = styled(Surface)`
     overflow-y: auto;
     max-height: calc(100vh - 6rem);
     padding: ${space.large};
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
   `}
 `
 

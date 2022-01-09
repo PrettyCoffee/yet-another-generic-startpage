@@ -20,6 +20,25 @@ export const Container = styled.div<ContainerProps>`
     box-shadow: ${shadow};
     border: ${space.smallest} solid ${color.primary.base};
     overflow: hidden;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: ${color.bg.shade};
+      border-radius: ${borderRadius}px;
+      margin: ${borderRadius * 0.75}px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${color.fg.base};
+      border-radius: ${borderRadius}px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: ${color.fg.shade};
+    }
   `}
 `
 
