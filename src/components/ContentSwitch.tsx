@@ -12,16 +12,16 @@ const SwitchTransition = styled(Transition)`
   max-width: 1000px;
 
   &.transition {
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.7s ease-in-out;
   }
   &.display {
     transform: translateX(0);
   }
   &.hideLeft {
-    transform: translateX(-100vw);
+    transform: translateX(-150vw);
   }
   &.hideRight {
-    transform: translateX(100vw);
+    transform: translateX(150vw);
   }
 `
 
