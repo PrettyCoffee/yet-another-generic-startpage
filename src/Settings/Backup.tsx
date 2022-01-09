@@ -5,6 +5,8 @@ import { storageBackup, useStoragePrefix } from "@startpage/local-storage"
 import { Download } from "react-feather"
 
 import { Button, Section, FileInput } from "../components"
+import { Checkbox } from "../components/Checkbox"
+import { CenterLayout } from "./Design/fragments/CenterLayout"
 
 const Layout = styled.div`
   display: flex;
@@ -13,9 +15,17 @@ const Layout = styled.div`
 `
 
 export const Backup = () => {
+  const [useBookmarks, setUseBookmarks] = useState(true)
+  const [useColors, setUseColors] = useState(true)
+  const [useSettings, setUseSettings] = useState(true)
   const [importValid, setImportValid] = useState<boolean>()
   const prefix = useStoragePrefix()
-  const keys = Object.keys(localStorage).filter(key => key.startsWith(prefix))
+
+  const keys = []
+  if (useBookmarks) keys.push(prefix + "bookmarks")
+  if (useColors) keys.push(prefix + "theme")
+  if (useSettings) keys.push(prefix + "settings")
+
   const Backup = storageBackup(keys)
 
   const onImport = (file: File) => {
@@ -24,6 +34,19 @@ export const Backup = () => {
   }
   return (
     <Section title="Backup">
+      <CenterLayout>
+        <Checkbox
+          label="Bookmarks"
+          checked={useBookmarks}
+          onChange={setUseBookmarks}
+        />
+        <Checkbox label="Colors" checked={useColors} onChange={setUseColors} />
+        <Checkbox
+          label="Miscellaneous"
+          checked={useSettings}
+          onChange={setUseSettings}
+        />
+      </CenterLayout>
       <br />
       <Layout>
         <FileInput
