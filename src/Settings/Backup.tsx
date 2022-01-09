@@ -20,6 +20,7 @@ export const Backup = () => {
 
   const onImport = (file: File) => {
     Backup.restore(file).then(setImportValid)
+    window.location.reload()
   }
   return (
     <Section title="Backup">
