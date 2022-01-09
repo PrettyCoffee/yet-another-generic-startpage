@@ -116,7 +116,7 @@ export const Slider = ({
         onChange={event => onChange?.(Number(event.target.value))}
         {...delegated}
       />
-      <ValueText>{getValueText(value)}</ValueText>
+      <ValueText aria-hidden>{getValueText(value)}</ValueText>
     </Label>
   </Wrapper>
 )
