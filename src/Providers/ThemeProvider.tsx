@@ -9,6 +9,8 @@ const globalStyles = css`
 
   body {
     font-family: "Quicksand", sans-serif;
+    min-height: 100vh;
+    min-width: 700px;
   }
 
   *,
@@ -20,9 +22,10 @@ const globalStyles = css`
   body,
   #root {
     height: 100%;
-    min-height: 100vh;
     width: 100%;
     margin: 0;
+  }
+  #root {
     overflow: hidden;
   }
   input,
