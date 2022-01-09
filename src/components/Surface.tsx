@@ -8,10 +8,15 @@ import { useSettings } from "../Providers"
 type ContainerProps = {
   shadow?: string
   borderRadius: number
+  maxWidth: number
 }
 
 export const Container = styled.div<ContainerProps>`
-  ${({ theme: { color, space }, shadow, borderRadius }) => css`
+  ${({ theme: { color, space }, shadow, borderRadius, maxWidth }) => css`
+    width: calc(100% - 6rem);
+    max-width: ${maxWidth}px;
+    margin: 0 auto;
+
     display: flex;
     color: ${color.fg.surface};
     background-color: ${color.bg.surface};
@@ -47,12 +52,14 @@ type SurfaceProps = {
 }
 
 export const Surface = ({ ...delegated }: PropsWithChildren<SurfaceProps>) => {
-  const [{ surfaceShadow, surfaceBorderRadius }] = useSettings()
+  const [{ surfaceShadow, surfaceBorderRadius, surfaceMaxWidth }] =
+    useSettings()
 
   return (
     <Container
       shadow={surfaceShadow?.shadow}
       borderRadius={surfaceBorderRadius}
+      maxWidth={surfaceMaxWidth}
       {...delegated}
     />
   )

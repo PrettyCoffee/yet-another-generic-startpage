@@ -10,6 +10,7 @@ export const defaultSettings = {
   searchEngine: "google" as SearchEngineName,
   surfaceShadow: undefined as ShadowOptions | undefined,
   surfaceBorderRadius: 0,
+  surfaceMaxWidth: 1000,
 }
 
 export const initialBookmarks: InitialBookmarkGroup[] = [

@@ -8,8 +8,7 @@ import { IconButton } from "./IconButton"
 
 const SwitchTransition = styled(Transition)`
   position: absolute;
-  width: calc(100% - 6rem);
-  max-width: 1000px;
+  width: 100%;
 
   &.transition {
     transition: transform 0.7s ease-in-out;
