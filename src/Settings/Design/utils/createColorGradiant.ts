@@ -37,6 +37,7 @@ export const createColorGradiant = (
   end: string,
   steps: number
 ) => {
+  if (steps < 2) return [start]
   const startHsl = getHslValues(start)
   const endHsl = getHslValues(end)
 
