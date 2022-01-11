@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 import { useTheme } from "@startpage/theming"
 
 import { Slider } from "../../../components/Slider"
-import { useSettings } from "../../../Providers"
+import { useSurfaceSettings } from "../../../Providers"
 import {
   createShadowGradiant,
   ShadowParameters,
@@ -21,32 +21,31 @@ export const ShadowStyle = () => {
   const {
     theme: { color },
   } = useTheme()
-  const [settings, setSettings] = useSettings()
-  const { surfaceShadow } = settings
-  const [amount, setAmount] = useState(surfaceShadow?.amount || 5)
-  const [blur, setBlur] = useState(surfaceShadow?.blur || 0)
-  const [offset, setOffset] = useState(surfaceShadow?.offset || 12)
+  const [surfaceSettings, setSurfaceSettings] = useSurfaceSettings()
+  const [amount, setAmount] = useState(surfaceSettings.shadow.amount)
+  const [blur, setBlur] = useState(surfaceSettings.shadow.blur)
+  const [offset, setOffset] = useState(surfaceSettings.shadow.offset)
 
-  useEffect(() => {
-    const shadowParameters = {
-      amount,
-      blur,
-      offset,
-    }
+  const shadow = useMemo(() => {
+    const shadowParams = { amount, blur, offset }
     const startColor = color.primary.bg
     const endColor = color.secondary.bg
-    const shadow = createShadowGradiant(startColor, endColor, shadowParameters)
+    return createShadowGradiant(startColor, endColor, shadowParams)
+  }, [amount, blur, color, offset])
 
-    if (settings.surfaceShadow?.shadow !== shadow) {
-      setSettings({
-        ...settings,
-        surfaceShadow: {
-          ...shadowParameters,
+  useEffect(() => {
+    if (surfaceSettings.shadow.shadow !== shadow) {
+      setSurfaceSettings({
+        ...surfaceSettings,
+        shadow: {
+          amount,
+          blur,
+          offset,
           shadow,
         },
       })
     }
-  }, [amount, blur, offset, settings, color, setSettings])
+  }, [amount, blur, offset, setSurfaceSettings, shadow, surfaceSettings])
 
   return (
     <CenterLayout>

@@ -1,18 +1,18 @@
 import { Slider } from "../../../components/Slider"
-import { useSettings } from "../../../Providers"
+import { useSurfaceSettings } from "../../../Providers"
 import { CenterLayout } from "./CenterLayout"
 
 const BorderRadiusSlider = () => {
-  const [settings, setSettings] = useSettings()
-  const { surfaceBorderRadius } = settings
+  const [settings, setSettings] = useSurfaceSettings()
+  const { borderRadius } = settings
 
-  const handleChange = (surfaceBorderRadius: number) =>
-    setSettings({ ...settings, surfaceBorderRadius })
+  const handleChange = (borderRadius: number) =>
+    setSettings({ ...settings, borderRadius })
 
   return (
     <Slider
       label="Border radius"
-      value={surfaceBorderRadius}
+      value={borderRadius}
       min={0}
       max={64}
       step={1}
@@ -23,16 +23,16 @@ const BorderRadiusSlider = () => {
 }
 
 const MaxWidthSlider = () => {
-  const [settings, setSettings] = useSettings()
-  const { surfaceMaxWidth } = settings
+  const [settings, setSettings] = useSurfaceSettings()
+  const { maxWidth } = settings
 
-  const handleChange = (surfaceMaxWidth: number) =>
-    setSettings({ ...settings, surfaceMaxWidth })
+  const handleChange = (maxWidth: number) =>
+    setSettings({ ...settings, maxWidth })
 
   return (
     <Slider
       label="Max width"
-      value={surfaceMaxWidth}
+      value={maxWidth}
       min={700}
       max={1600}
       step={10}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import styled from "@emotion/styled/macro"
 
-import { useSettings } from "../Providers"
+import { useGeneralSettings } from "../Providers"
 
 const fallbackImage = "https://http.cat/404"
 
@@ -13,7 +13,7 @@ const Img = styled.img`
 `
 
 export const Image = () => {
-  const [{ img }] = useSettings()
+  const [{ img }] = useGeneralSettings()
   const [src, setSrc] = useState("")
 
   useEffect(() => setSrc(img), [img])

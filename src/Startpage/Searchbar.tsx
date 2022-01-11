@@ -5,7 +5,7 @@ import { performSearch } from "@startpage/search"
 import { Search } from "react-feather"
 
 import { IconButton, TextInput } from "../components"
-import { useSettings } from "../Providers"
+import { useSearchSettings } from "../Providers"
 
 const Layout = styled.div`
   display: flex;
@@ -17,18 +17,17 @@ const Input = styled(TextInput)`
 `
 
 export const Searchbar = () => {
-  const [{ searchEngine, searchPlaceholder }] = useSettings()
+  const [{ engine, placeholder }] = useSearchSettings()
   const [value, setValue] = useState("")
 
-  const handleSearch = () =>
-    performSearch(value, searchEngine, { directLink: true })
+  const handleSearch = () => performSearch(value, engine, { directLink: true })
 
   return (
     <Layout>
       <IconButton icon={Search} onClick={handleSearch} label="Search" />
       <Input
         value={value}
-        placeholder={searchPlaceholder}
+        placeholder={placeholder}
         autoFocus
         onChange={setValue}
         onKeyPress={key => key === "Enter" && handleSearch()}

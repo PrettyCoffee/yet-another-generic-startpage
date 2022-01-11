@@ -2,51 +2,47 @@ import { SearchEngineName } from "@startpage/search"
 
 import { Section, Select, TextInput } from "../components"
 import { ImageInput } from "../components/TextInputs/ImageInput"
-import { useSettings } from "../Providers"
-
-type GeneralSettings = "title" | "img" | "searchPlaceholder"
+import { useGeneralSettings, useSearchSettings } from "../Providers"
 
 export const General = () => {
-  const [settings, setSettings] = useSettings()
+  const [generalSettings, setGeneralSettings] = useGeneralSettings()
+  const [searchSettings, setSearchSettings] = useSearchSettings()
 
-  const changeSetting = (key: GeneralSettings, value: string) => {
-    const cpy = { ...settings }
-    cpy[key] = value
-    setSettings(cpy)
-  }
+  const setTitle = (title: string) =>
+    setGeneralSettings({ ...generalSettings, title })
 
-  const setTitle = (value: string) => changeSetting("title", value)
+  const setImg = (img: string) =>
+    setGeneralSettings({ ...generalSettings, img })
 
-  const setImg = (value: string) => changeSetting("img", value)
+  const setSearchPlaceholder = (placeholder: string) =>
+    setSearchSettings({ ...searchSettings, placeholder })
 
-  const setSearchPlaceholder = (value: string) =>
-    changeSetting("searchPlaceholder", value)
-
-  const setSearchEngine = (value: string) => {
-    const cpy = { ...settings }
-    cpy["searchEngine"] = value as SearchEngineName
-    setSettings(cpy)
-  }
+  const setSearchEngine = (engine: string) =>
+    setSearchSettings({ ...searchSettings, engine: engine as SearchEngineName })
 
   return (
     <Section title="General">
       <br />
-      <ImageInput label="Image" value={settings.img} onChange={setImg} />
+      <ImageInput label="Image" value={generalSettings.img} onChange={setImg} />
       <br />
       <br />
-      <TextInput label="Title" value={settings.title} onChange={setTitle} />
+      <TextInput
+        label="Title"
+        value={generalSettings.title}
+        onChange={setTitle}
+      />
       <br />
       <br />
       <TextInput
         label="Searchbar placeholder"
-        value={settings.searchPlaceholder}
+        value={searchSettings.placeholder}
         onChange={setSearchPlaceholder}
       />
       <br />
       <br />
       <Select
         label="Search engine"
-        value={settings.searchEngine}
+        value={searchSettings.engine}
         onChange={setSearchEngine}
         options={[
           {

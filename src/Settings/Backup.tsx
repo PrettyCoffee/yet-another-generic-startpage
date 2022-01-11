@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 import styled from "@emotion/styled/macro"
 import { storageBackup, useStoragePrefix } from "@startpage/local-storage"
@@ -15,36 +15,65 @@ const Layout = styled.div`
 `
 
 export const Backup = () => {
-  const [useBookmarks, setUseBookmarks] = useState(true)
-  const [useColors, setUseColors] = useState(true)
-  const [useSettings, setUseSettings] = useState(true)
   const [importValid, setImportValid] = useState<boolean>()
+  const [checkState, setCheckState] = useState<Record<string, boolean>>({
+    general: true,
+    theme: true,
+    surface: true,
+    bookmarks: true,
+  })
   const prefix = useStoragePrefix()
 
-  const keys = []
-  if (useBookmarks) keys.push(prefix + "bookmarks")
-  if (useColors) keys.push(prefix + "theme")
-  if (useSettings) keys.push(prefix + "settings")
-
-  const Backup = storageBackup(keys)
+  const Backup = useMemo(
+    () =>
+      storageBackup(
+        Object.keys(checkState)
+          .filter(key => checkState[key])
+          .map(key => prefix + key)
+      ),
+    [checkState, prefix]
+  )
 
   const onImport = (file: File) => {
-    Backup.restore(file).then(setImportValid)
-    window.location.reload()
+    Backup.restore(file).then(valid => {
+      if (valid) window.location.reload()
+      else setImportValid(false)
+    })
   }
+
+  const checkGeneral = (general: boolean) =>
+    setCheckState({ ...checkState, general })
+
+  const checkTheme = (theme: boolean) => setCheckState({ ...checkState, theme })
+
+  const checkSurface = (surface: boolean) =>
+    setCheckState({ ...checkState, surface })
+
+  const checkBookmarks = (bookmarks: boolean) =>
+    setCheckState({ ...checkState, bookmarks })
+
   return (
     <Section title="Backup">
       <CenterLayout>
         <Checkbox
-          label="Bookmarks"
-          checked={useBookmarks}
-          onChange={setUseBookmarks}
+          label="General"
+          checked={checkState.general}
+          onChange={checkGeneral}
         />
-        <Checkbox label="Colors" checked={useColors} onChange={setUseColors} />
         <Checkbox
-          label="Miscellaneous"
-          checked={useSettings}
-          onChange={setUseSettings}
+          label="Theme"
+          checked={checkState.theme}
+          onChange={checkTheme}
+        />
+        <Checkbox
+          label="Window"
+          checked={checkState.surface}
+          onChange={checkSurface}
+        />
+        <Checkbox
+          label="Bookmarks"
+          checked={checkState.bookmarks}
+          onChange={checkBookmarks}
         />
       </CenterLayout>
       <br />

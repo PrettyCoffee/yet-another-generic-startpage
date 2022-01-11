@@ -1,7 +1,7 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useSettings } from "../Providers"
+import { useGeneralSettings } from "../Providers"
 
 const H1 = styled.h1`
   ${({ theme: { color, space } }) => css`
@@ -16,6 +16,6 @@ const H1 = styled.h1`
 `
 
 export const Headline = () => {
-  const [{ title }] = useSettings()
+  const [{ title }] = useGeneralSettings()
   return <H1 tabIndex={-1}>{title}</H1>
 }

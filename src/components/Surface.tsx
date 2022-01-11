@@ -3,10 +3,10 @@ import { PropsWithChildren } from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useSettings } from "../Providers"
+import { useSurfaceSettings } from "../Providers"
 
 type ContainerProps = {
-  shadow?: string
+  shadow: string
   borderRadius: number
   maxWidth: number
 }
@@ -52,15 +52,7 @@ type SurfaceProps = {
 }
 
 export const Surface = ({ ...delegated }: PropsWithChildren<SurfaceProps>) => {
-  const [{ surfaceShadow, surfaceBorderRadius, surfaceMaxWidth }] =
-    useSettings()
+  const [{ shadow, ...settings }] = useSurfaceSettings()
 
-  return (
-    <Container
-      shadow={surfaceShadow?.shadow}
-      borderRadius={surfaceBorderRadius}
-      maxWidth={surfaceMaxWidth}
-      {...delegated}
-    />
-  )
+  return <Container shadow={shadow.shadow} {...settings} {...delegated} />
 }

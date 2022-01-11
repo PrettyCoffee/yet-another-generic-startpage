@@ -3,14 +3,25 @@ import { SearchEngineName } from "@startpage/search"
 
 import { ShadowOptions } from "../Settings/Design/fragments/ShadowStyle"
 
-export const defaultSettings = {
+export const generalSettings = {
   img: "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_p320aq1osj1vjxiz1o1_1280.gif?iv=344",
   title: "Yet another generic startpage",
-  searchPlaceholder: "Search the web",
-  searchEngine: "google" as SearchEngineName,
-  surfaceShadow: undefined as ShadowOptions | undefined,
-  surfaceBorderRadius: 0,
-  surfaceMaxWidth: 1000,
+}
+
+export const searchSettings = {
+  placeholder: "Search the web",
+  engine: "google" as SearchEngineName,
+}
+
+export const surfaceSettings = {
+  shadow: {
+    amount: 5,
+    blur: 0,
+    offset: 12,
+    shadow: "",
+  } as ShadowOptions,
+  borderRadius: 0,
+  maxWidth: 1000,
 }
 
 export const initialBookmarks: InitialBookmarkGroup[] = [
