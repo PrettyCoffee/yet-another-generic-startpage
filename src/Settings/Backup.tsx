@@ -97,6 +97,10 @@ export const Backup = () => {
           Download <Download />
         </Button>
       </Layout>
+      <br />
+      <CenterLayout as="p">
+        Note: Both, import and download, will only use the checked options!
+      </CenterLayout>
     </Section>
   )
 }
