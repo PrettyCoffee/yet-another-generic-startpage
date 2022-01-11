@@ -18,6 +18,7 @@ export const Backup = () => {
   const [importValid, setImportValid] = useState<boolean>()
   const [checkState, setCheckState] = useState<Record<string, boolean>>({
     general: true,
+    search: true,
     theme: true,
     surface: true,
     bookmarks: true,
@@ -44,6 +45,9 @@ export const Backup = () => {
   const checkGeneral = (general: boolean) =>
     setCheckState({ ...checkState, general })
 
+  const checkSearch = (search: boolean) =>
+    setCheckState({ ...checkState, search })
+
   const checkTheme = (theme: boolean) => setCheckState({ ...checkState, theme })
 
   const checkSurface = (surface: boolean) =>
@@ -59,6 +63,11 @@ export const Backup = () => {
           label="General"
           checked={checkState.general}
           onChange={checkGeneral}
+        />
+        <Checkbox
+          label="Search"
+          checked={checkState.search}
+          onChange={checkSearch}
         />
         <Checkbox
           label="Theme"
