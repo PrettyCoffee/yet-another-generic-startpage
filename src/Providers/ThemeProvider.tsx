@@ -10,7 +10,7 @@ const globalStyles = css`
   body {
     font-family: "Quicksand", sans-serif;
     min-height: 100vh;
-    min-width: 700px;
+    min-width: 600px;
   }
 
   *,
