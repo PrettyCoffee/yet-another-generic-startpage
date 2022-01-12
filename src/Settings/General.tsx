@@ -1,24 +1,15 @@
-import { SearchEngineName } from "@startpage/search"
-
-import { Section, Select, TextInput } from "../components"
+import { Section, TextInput } from "../components"
 import { ImageInput } from "../components/TextInputs/ImageInput"
-import { useGeneralSettings, useSearchSettings } from "../Providers"
+import { useGeneralSettings } from "../Providers"
 
 export const General = () => {
   const [generalSettings, setGeneralSettings] = useGeneralSettings()
-  const [searchSettings, setSearchSettings] = useSearchSettings()
 
   const setTitle = (title: string) =>
     setGeneralSettings({ ...generalSettings, title })
 
   const setImg = (img: string) =>
     setGeneralSettings({ ...generalSettings, img })
-
-  const setSearchPlaceholder = (placeholder: string) =>
-    setSearchSettings({ ...searchSettings, placeholder })
-
-  const setSearchEngine = (engine: string) =>
-    setSearchSettings({ ...searchSettings, engine: engine as SearchEngineName })
 
   return (
     <Section title="General">
@@ -31,28 +22,6 @@ export const General = () => {
         onChange={setTitle}
       />
       <br />
-      <br />
-      <TextInput
-        label="Searchbar placeholder"
-        value={searchSettings.placeholder}
-        onChange={setSearchPlaceholder}
-      />
-      <br />
-      <br />
-      <Select
-        label="Search engine"
-        value={searchSettings.engine}
-        onChange={setSearchEngine}
-        options={[
-          {
-            value: "duckduckgo",
-            label: "duckduckgo",
-          },
-          { value: "google", label: "google" },
-          { value: "startpage", label: "startpage" },
-          { value: "ecosia", label: "ecosia" },
-        ]}
-      />
     </Section>
   )
 }

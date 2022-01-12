@@ -5,6 +5,7 @@ import { Surface as SurfaceElement } from "../components"
 import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
 import { General } from "./General"
+import { Search } from "./Search"
 import { Surface } from "./Surface"
 import { Theme } from "./Theme"
 
@@ -20,6 +21,7 @@ const SettingsSurface = styled(SurfaceElement)`
 export const Settings = () => (
   <SettingsSurface>
     <General />
+    <Search />
     <Theme />
     <Surface />
     <Bookmarks />
