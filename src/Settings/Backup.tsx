@@ -54,6 +54,11 @@ export const Backup = () => {
     <Section title="Backup">
       <CenterLayout>
         <Checkbox
+          label="Bookmarks"
+          checked={checkState.bookmarks}
+          onChange={checkBookmarks}
+        />
+        <Checkbox
           label="General"
           checked={checkState.general}
           onChange={checkGeneral}
@@ -64,19 +69,14 @@ export const Backup = () => {
           onChange={checkSearch}
         />
         <Checkbox
-          label="Theme"
-          checked={checkState.theme}
-          onChange={checkTheme}
-        />
-        <Checkbox
           label="Surface"
           checked={checkState.surface}
           onChange={checkSurface}
         />
         <Checkbox
-          label="Bookmarks"
-          checked={checkState.bookmarks}
-          onChange={checkBookmarks}
+          label="Theme"
+          checked={checkState.theme}
+          onChange={checkTheme}
         />
       </CenterLayout>
       <br />
