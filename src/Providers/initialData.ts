@@ -6,6 +6,7 @@ import { ShadowOptions } from "../Settings/Surface/fragments/ShadowStyle"
 export const generalSettings = {
   img: "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_p320aq1osj1vjxiz1o1_1280.gif?iv=344",
   title: "Yet another generic startpage",
+  displayImg: true,
 }
 
 export const searchSettings = {

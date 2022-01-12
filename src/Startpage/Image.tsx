@@ -13,10 +13,12 @@ const Img = styled.img`
 `
 
 export const Image = () => {
-  const [{ img }] = useGeneralSettings()
+  const [{ img, displayImg }] = useGeneralSettings()
   const [src, setSrc] = useState("")
 
   useEffect(() => setSrc(img), [img])
+
+  if (!displayImg) return null
 
   return <Img alt="" src={src} onError={() => setSrc(fallbackImage)} />
 }
