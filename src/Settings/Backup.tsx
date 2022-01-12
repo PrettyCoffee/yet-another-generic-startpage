@@ -1,18 +1,12 @@
 import { useMemo, useState } from "react"
 
-import styled from "@emotion/styled/macro"
 import { storageBackup, useStoragePrefix } from "@startpage/local-storage"
 import { Download } from "react-feather"
 
 import { Button, Section, FileInput } from "../components"
 import { Checkbox } from "../components/Checkbox"
 import { CenterLayout } from "./fragments/CenterLayout"
-
-const Layout = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-`
+import { SpacedLayout } from "./fragments/SpacedLayout"
 
 export const Backup = () => {
   const [importValid, setImportValid] = useState<boolean>()
@@ -86,7 +80,7 @@ export const Backup = () => {
         />
       </CenterLayout>
       <br />
-      <Layout>
+      <SpacedLayout>
         <FileInput
           label="Import"
           id="backup-import"
@@ -96,7 +90,7 @@ export const Backup = () => {
         <Button onClick={() => Backup.download()}>
           Download <Download />
         </Button>
-      </Layout>
+      </SpacedLayout>
       <br />
       <CenterLayout as="p">
         Note: Both, import and download, will only use the checked options!

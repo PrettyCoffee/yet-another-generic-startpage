@@ -1,18 +1,12 @@
 import { useState } from "react"
 
-import styled from "@emotion/styled/macro"
 import { createColorScheme, getInvertedColorScheme } from "@startpage/preset"
 import { useTheme } from "@startpage/theming"
 
 import { Section } from "../../components"
+import { SpacedLayout } from "../fragments/SpacedLayout"
 import { ColorFields, ColorPresets, InvertSwitch } from "./fragments"
 import { ColorSet, extractColorSetFromTheme } from "./utils/ColorSet"
-
-const Layout = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-`
 
 export const Theme = () => {
   const { theme, setTheme } = useTheme()
@@ -37,10 +31,10 @@ export const Theme = () => {
       <ColorFields {...sharedProps} />
       <br />
       <br />
-      <Layout>
+      <SpacedLayout>
         <ColorPresets {...sharedProps} />
         <InvertSwitch {...sharedProps} />
-      </Layout>
+      </SpacedLayout>
     </Section>
   )
 }
