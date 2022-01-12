@@ -10,7 +10,7 @@ export const BookmarkGroup = ({ id, label, bookmarks }: Group) => {
   )
 
   return (
-    <Accordion header={GroupHeader}>
+    <Accordion header={GroupHeader} buttonLabel={`${label} bookmarks`}>
       {bookmarks.map(bookmark => (
         <Bookmark key={bookmark.id} {...bookmark} />
       ))}

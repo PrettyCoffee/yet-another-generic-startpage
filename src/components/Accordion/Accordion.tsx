@@ -7,17 +7,21 @@ import { Panel } from "./fragments/Panel"
 
 type AccordionProps = {
   header: string | JSX.Element
+  buttonLabel?: string
 }
 
 export const Accordion = ({
   header,
+  buttonLabel,
   children,
 }: PropsWithChildren<AccordionProps>) => {
   return (
     <Disclosure>
       {({ open }) => (
         <>
-          <HeaderButton open={open}>{header}</HeaderButton>
+          <HeaderButton open={open} label={buttonLabel}>
+            {header}
+          </HeaderButton>
           <Panel>{children}</Panel>
         </>
       )}
