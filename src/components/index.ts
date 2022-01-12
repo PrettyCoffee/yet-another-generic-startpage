@@ -1,3 +1,4 @@
+export { Accordion } from "./Accordion"
 export { Button } from "./Button"
 export { ContentSwitch } from "./ContentSwitch"
 export { ColorInput } from "./TextInputs/ColorInput"
