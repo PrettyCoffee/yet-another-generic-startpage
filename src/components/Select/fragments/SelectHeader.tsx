@@ -1,5 +1,3 @@
-import React from "react"
-
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Listbox } from "@headlessui/react"

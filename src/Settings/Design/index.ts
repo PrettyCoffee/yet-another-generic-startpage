@@ -1,1 +1,0 @@
-export { Design } from "./Design"

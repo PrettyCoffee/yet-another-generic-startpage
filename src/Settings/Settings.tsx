@@ -1,13 +1,14 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { Surface } from "../components"
+import { Surface as SurfaceElement } from "../components"
 import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
-import { Design } from "./Design"
 import { General } from "./General"
+import { Surface } from "./Surface"
+import { Theme } from "./Theme"
 
-const SettingsSurface = styled(Surface)`
+const SettingsSurface = styled(SurfaceElement)`
   ${({ theme: { space } }) => css`
     display: block;
     overflow-y: auto;
@@ -19,7 +20,8 @@ const SettingsSurface = styled(Surface)`
 export const Settings = () => (
   <SettingsSurface>
     <General />
-    <Design />
+    <Theme />
+    <Surface />
     <Bookmarks />
     <Backup />
   </SettingsSurface>

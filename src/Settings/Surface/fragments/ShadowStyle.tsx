@@ -4,11 +4,11 @@ import { useTheme } from "@startpage/theming"
 
 import { Slider } from "../../../components/Slider"
 import { useSurfaceSettings } from "../../../Providers"
+import { CenterLayout } from "../../fragments/CenterLayout"
 import {
   createShadowGradiant,
   ShadowParameters,
 } from "../utils/createShadowGradiant"
-import { CenterLayout } from "./CenterLayout"
 
 export type ShadowOptions = ShadowParameters & {
   shadow: string

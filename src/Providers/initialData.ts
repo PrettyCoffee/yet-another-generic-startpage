@@ -1,7 +1,7 @@
 import { InitialBookmarkGroup } from "@startpage/bookmarks"
 import { SearchEngineName } from "@startpage/search"
 
-import { ShadowOptions } from "../Settings/Design/fragments/ShadowStyle"
+import { ShadowOptions } from "../Settings/Surface/fragments/ShadowStyle"
 
 export const generalSettings = {
   img: "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_p320aq1osj1vjxiz1o1_1280.gif?iv=344",

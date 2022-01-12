@@ -1,8 +1,8 @@
 import { BaseColors } from "@startpage/preset"
 
 import { ColorInput } from "../../../components"
+import { CenterLayout } from "../../fragments/CenterLayout"
 import { ColorSetStateProps } from "../utils/ColorSet"
-import { CenterLayout } from "./CenterLayout"
 
 export const ColorFields = ({ colors, updateColors }: ColorSetStateProps) => {
   const setColor = (key: keyof BaseColors, value: string) => {

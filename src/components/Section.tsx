@@ -5,7 +5,7 @@ import styled from "@emotion/styled/macro"
 
 const Title = styled.h2`
   ${({ theme: { color, space } }) => css`
-    margin: 0 0 0 -${space.medium};
+    margin: 0 0 ${space.large} -${space.medium};
     border-bottom: ${space.smallest} solid ${color.bg.shade};
   `}
 `

@@ -22,7 +22,6 @@ export const General = () => {
 
   return (
     <Section title="General">
-      <br />
       <ImageInput label="Image" value={generalSettings.img} onChange={setImg} />
       <br />
       <br />

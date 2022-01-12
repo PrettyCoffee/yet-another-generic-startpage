@@ -1,19 +1,20 @@
 import { useState } from "react"
 
+import styled from "@emotion/styled/macro"
 import { createColorScheme, getInvertedColorScheme } from "@startpage/preset"
 import { useTheme } from "@startpage/theming"
 
 import { Section } from "../../components"
-import {
-  ColorFields,
-  ColorPresets,
-  InvertSwitch,
-  ShadowStyle,
-} from "./fragments"
-import { SurfaceMiscStyles } from "./fragments/SurfaceMiscStyles"
+import { ColorFields, ColorPresets, InvertSwitch } from "./fragments"
 import { ColorSet, extractColorSetFromTheme } from "./utils/ColorSet"
 
-export const Design = () => {
+const Layout = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`
+
+export const Theme = () => {
   const { theme, setTheme } = useTheme()
   const [colors, setColors] = useState(extractColorSetFromTheme(theme))
 
@@ -32,17 +33,14 @@ export const Design = () => {
   }
 
   return (
-    <Section title="Design">
-      <br />
-      <ColorPresets {...sharedProps} />
-      <br />
-      <InvertSwitch {...sharedProps} />
-      <h3>Colors</h3>
+    <Section title="Theme">
       <ColorFields {...sharedProps} />
       <br />
-      <h3>Window</h3>
-      <SurfaceMiscStyles />
-      <ShadowStyle />
+      <br />
+      <Layout>
+        <ColorPresets {...sharedProps} />
+        <InvertSwitch {...sharedProps} />
+      </Layout>
     </Section>
   )
 }

@@ -6,7 +6,7 @@ import { Download } from "react-feather"
 
 import { Button, Section, FileInput } from "../components"
 import { Checkbox } from "../components/Checkbox"
-import { CenterLayout } from "./Design/fragments/CenterLayout"
+import { CenterLayout } from "./fragments/CenterLayout"
 
 const Layout = styled.div`
   display: flex;
