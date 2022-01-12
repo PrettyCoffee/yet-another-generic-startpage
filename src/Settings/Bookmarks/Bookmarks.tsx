@@ -16,6 +16,7 @@ export const Bookmarks = () => {
         {bookmarkGroups.map(group => (
           <BookmarkGroup key={group.id} {...group} />
         ))}
+        <br />
         <Button onClick={handleNewGroup} disabled={bookmarkGroups.length >= 7}>
           New Group <Plus />
         </Button>
