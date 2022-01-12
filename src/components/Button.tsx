@@ -26,9 +26,10 @@ const NativeButton = styled.button`
       cursor: pointer;
       border-color: ${color.fg.base};
       :hover {
-        background-color: ${color.bg.highlight};
+        background: ${color.bg.highlight};
       }
       :focus-visible {
+        background: ${color.bg.highlight};
         border-color: ${color.primary.base};
       }
     }

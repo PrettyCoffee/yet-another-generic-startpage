@@ -34,6 +34,7 @@ const Label = styled.label<{ valid?: boolean }>`
     }
     ${HiddenFileInput}:focus-visible + & {
       border-color: ${color.primary.base};
+      background: ${color.bg.highlight};
     }
     ${valid === true &&
     css`

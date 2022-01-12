@@ -68,7 +68,7 @@ export const initialBookmarks: InitialBookmarkGroup[] = [
     bookmarks: [
       {
         label: "happy hues",
-        url: "https://www.happyhues.co/palettes/4",
+        url: "https://www.happyhues.co/",
       },
       {
         label: "styled-components",

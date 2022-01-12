@@ -50,6 +50,7 @@ export const TextInput = ({
     <Input
       type="text"
       invalid={invalid}
+      onClick={click => click.stopPropagation()}
       onChange={event => onChange?.(event.currentTarget.value)}
       onKeyPress={event => onKeyPress?.(event.key)}
       {...delegated}

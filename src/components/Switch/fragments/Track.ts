@@ -16,6 +16,7 @@ export const Track = styled.span`
 
     ${SwitchButton}:focus-visible > & {
       outline-color: ${color.primary.base};
+      background: ${color.bg.highlight};
     }
   `}
 `

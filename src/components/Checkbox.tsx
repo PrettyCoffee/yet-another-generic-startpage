@@ -28,6 +28,8 @@ const Box = styled.span`
 
     :focus-visible {
       border-color: ${color.primary.base};
+      background: ${color.bg.highlight};
+      transform: scale(1.3);
     }
 
     label:hover > & {

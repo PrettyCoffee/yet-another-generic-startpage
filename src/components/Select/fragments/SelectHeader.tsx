@@ -28,6 +28,7 @@ const HeaderButton = styled(Listbox.Button)<Pick<SelectHeaderProps, "open">>`
       background-color: ${color.bg.highlight};
     }
     :focus-visible {
+      background: ${color.bg.highlight};
       border-color: ${color.primary.base};
     }
     ${open &&

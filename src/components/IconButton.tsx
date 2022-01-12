@@ -26,6 +26,10 @@ const Button = styled.button`
         color: ${color.primary.base};
       }
     }
+    :focus-visible {
+      background: ${color.bg.highlight};
+      outline: ${space.smallest} solid ${color.fg.shade};
+    }
 
     :disabled {
       color: ${color.fg.shade};
@@ -51,7 +55,15 @@ export const IconButton = ({
   icon: Icon,
   disabled,
 }: IconButtonProps) => (
-  <Button onClick={onClick} title={label} disabled={disabled}>
+  <Button
+    onClick={click => {
+      onClick?.()
+      click.stopPropagation()
+    }}
+    onKeyDown={key => key.stopPropagation()}
+    title={label}
+    disabled={disabled}
+  >
     <Icon aria-hidden />
     {label ? <VisuallyHidden>{label}</VisuallyHidden> : null}
   </Button>

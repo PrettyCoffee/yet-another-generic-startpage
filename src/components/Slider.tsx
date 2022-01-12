@@ -28,6 +28,7 @@ const trackFocusStyles = ({ color }: Theme) =>
 
 const thumbFocusStyles = ({ color }: Theme) => css`
   outline: 2px solid ${color.primary.base};
+  background: ${color.bg.highlight};
 `
 
 const Wrapper = styled.div`

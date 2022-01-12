@@ -1,5 +1,6 @@
 import { FC, useState } from "react"
 
+import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Transition } from "@headlessui/react"
 import { ChevronsLeft, ChevronsRight } from "react-feather"
@@ -25,15 +26,17 @@ const SwitchTransition = styled(Transition)`
 `
 
 const ButtonPosition = styled.div`
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  > button:hover,
-  > button:focus-visible {
-    > svg {
-      transform: scale(1.3);
+  ${({ theme: { space } }) => css`
+    position: fixed;
+    top: ${space.smallest};
+    right: ${space.smallest};
+    > button:hover,
+    > button:focus-visible {
+      > svg {
+        transform: scale(1.3);
+      }
     }
-  }
+  `}
 `
 
 type SurfaceSwitchProps = {
