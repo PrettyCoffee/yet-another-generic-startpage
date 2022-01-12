@@ -10,7 +10,10 @@ const Wrapper = styled.div`
   display: inline-block;
 `
 
-const HiddenFileInput = styled(VisuallyHidden)<{ type: "file" }>``
+const HiddenFileInput = styled(VisuallyHidden)<{ type: "file" }>`
+  position: relative;
+  outline: none;
+`
 
 const Label = styled.label<{ valid?: boolean }>`
   ${({ theme: { space, color }, valid }) => css`
