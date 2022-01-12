@@ -69,7 +69,7 @@ export const Backup = () => {
           onChange={checkTheme}
         />
         <Checkbox
-          label="Window"
+          label="Surface"
           checked={checkState.surface}
           onChange={checkSurface}
         />
@@ -91,6 +91,7 @@ export const Backup = () => {
           Download <Download />
         </Button>
       </SpacedLayout>
+      <br />
       <br />
       <CenterLayout as="p">
         Note: Both, import and download, will only use the checked options!
