@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react"
+import { ChangeEvent, useState, DragEvent } from "react"
 
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
@@ -15,8 +15,13 @@ const HiddenFileInput = styled(VisuallyHidden)<{ type: "file" }>`
   outline: none;
 `
 
-const Label = styled.label<{ valid?: boolean }>`
-  ${({ theme: { space, color }, valid }) => css`
+type LabelProps = {
+  valid?: boolean
+  dragging: boolean
+}
+
+const Label = styled.label<LabelProps>`
+  ${({ theme: { space, color }, valid, dragging }) => css`
     height: calc(${space.largest} * 2);
     width: 12rem;
 
@@ -39,6 +44,11 @@ const Label = styled.label<{ valid?: boolean }>`
       border-color: ${color.primary.base};
       background: ${color.bg.highlight};
     }
+    ${dragging &&
+    css`
+      border-color: ${color.primary.base};
+      background: ${color.bg.highlight};
+    `}
     ${valid === true &&
     css`
       border-color: ${color.palette.green};
@@ -58,14 +68,34 @@ type FileInputProps = {
 }
 
 export const FileInput = ({ label, id, onChange, valid }: FileInputProps) => {
+  const [dragging, setDragging] = useState(false)
+
+  const addDrag = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setDragging(true)
+  }
+
+  const removeDrag = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setDragging(false)
+  }
+
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    setDragging(false)
+    const file = event.dataTransfer.items[0].getAsFile()
+    if (file) onChange?.(file)
+  }
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (file) onChange?.(file)
   }
+
   return (
-    <Wrapper>
+    <Wrapper onDrop={handleDrop} onDragOver={addDrag} onDragLeave={removeDrag}>
       <HiddenFileInput as="input" type="file" id={id} onChange={handleChange} />
-      <Label htmlFor={id} valid={valid}>
+      <Label htmlFor={id} valid={valid} dragging={dragging}>
         {label} <Upload />
       </Label>
     </Wrapper>
