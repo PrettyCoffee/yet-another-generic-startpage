@@ -71,6 +71,7 @@ export const SearchLookup = () => {
     <Accordion header={header} buttonLabel="lookup accordion">
       {lookupKeys.map(key => (
         <EditableRow
+          key={key}
           designator="lookup"
           label={key}
           url={forwardingLookup[key]}
