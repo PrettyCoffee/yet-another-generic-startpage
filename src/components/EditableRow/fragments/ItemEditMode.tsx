@@ -2,10 +2,10 @@ import { useState } from "react"
 
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
-import { BookmarkWithoutId } from "@startpage/bookmarks"
 import { Save, X } from "react-feather"
 
-import { IconButton, TextInput } from "../../../../components"
+import { IconButton, TextInput } from "../../"
+import { RowElement } from "../EditableRow"
 
 const Wrapper = styled.div`
   ${({ theme: { space, color } }) => css`
@@ -21,8 +21,8 @@ const Wrapper = styled.div`
   `}
 `
 
-type ItemEditModeProps = BookmarkWithoutId & {
-  onSave: (bookmark: BookmarkWithoutId) => void
+type ItemEditModeProps = RowElement & {
+  onSave: (bookmark: RowElement) => void
   onAbort: () => void
 }
 
@@ -35,7 +35,7 @@ export const ItemEditMode = ({
   const [newLabel, setNewLabel] = useState(label)
   const [newUrl, setNewUrl] = useState(url)
 
-  const newBookmark: BookmarkWithoutId = {
+  const newBookmark: RowElement = {
     label: newLabel,
     url: newUrl,
   }

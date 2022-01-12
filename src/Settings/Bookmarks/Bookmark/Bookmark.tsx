@@ -4,9 +4,8 @@ import {
   useBookmarks,
 } from "@startpage/bookmarks"
 
+import { EditableRow } from "../../../components"
 import { useEditMode } from "../fragments/EditModeContext"
-import { ItemEditMode } from "./fragments/ItemEditMode"
-import { ItemViewMode } from "./fragments/ItemViewMode"
 
 export const Bookmark = ({ id, label, url }: BookmarkProps) => {
   const { editElement, setEditElement } = useEditMode()
@@ -21,24 +20,16 @@ export const Bookmark = ({ id, label, url }: BookmarkProps) => {
     editBookmark(id, bookmark)
     toggleMode()
   }
-  const handleAbort = () => toggleMode()
-
-  if (editModeIsActive)
-    return (
-      <ItemEditMode
-        label={label}
-        url={url}
-        onSave={handleSave}
-        onAbort={handleAbort}
-      />
-    )
 
   return (
-    <ItemViewMode
+    <EditableRow
       label={label}
       url={url}
+      designator="bookmark"
+      mode={editModeIsActive ? "edit" : "view"}
+      onEdit={handleSave}
       onRemove={handleRemove}
-      onEdit={toggleMode}
+      toggleMode={toggleMode}
     />
   )
 }

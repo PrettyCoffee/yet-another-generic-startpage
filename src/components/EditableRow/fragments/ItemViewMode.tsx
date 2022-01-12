@@ -1,9 +1,9 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
-import { Bookmark } from "@startpage/bookmarks"
 import { Edit3, Trash } from "react-feather"
 
-import { IconButton } from "../../../../components"
+import { IconButton } from "../../"
+import { RowElement } from "../EditableRow"
 import { Url } from "./Url"
 
 const Wrapper = styled.div`
@@ -27,16 +27,18 @@ const Actions = styled.div`
   width: max-content;
 `
 
-type ItemViewModeProps = Pick<Bookmark, "label" | "url"> & {
-  onEdit: () => void
-  onRemove: () => void
+type ItemViewModeProps = RowElement & {
+  designator: string
+  onEditClick: () => void
+  onRemoveClick: () => void
 }
 
 export const ItemViewMode = ({
   label,
   url,
-  onRemove,
-  onEdit,
+  designator,
+  onRemoveClick,
+  onEditClick,
 }: ItemViewModeProps) => (
   <Wrapper>
     <Label>{label}</Label>
@@ -44,13 +46,13 @@ export const ItemViewMode = ({
     <Actions>
       <IconButton
         icon={Edit3}
-        label={`Edit bookmark ${label}`}
-        onClick={onEdit}
+        label={`Edit ${label} ${designator}`}
+        onClick={onEditClick}
       />
       <IconButton
         icon={Trash}
-        label={`Remove bookmark ${label}`}
-        onClick={onRemove}
+        label={`Remove ${label} ${designator}`}
+        onClick={onRemoveClick}
       />
     </Actions>
   </Wrapper>

@@ -1,6 +1,7 @@
 export { Button } from "./Button"
 export { ContentSwitch } from "./ContentSwitch"
 export { ColorInput } from "./TextInputs/ColorInput"
+export { EditableRow } from "./EditableRow"
 export { FileInput } from "./FileInput"
 export { IconButton } from "./IconButton"
 export { Section } from "./Section"
