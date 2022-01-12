@@ -1,5 +1,5 @@
 import { InitialBookmarkGroup } from "@startpage/bookmarks"
-import { SearchEngineName } from "@startpage/search"
+import { SearchEngineName, SearchOptions } from "@startpage/search"
 
 import { ShadowOptions } from "../Settings/Surface/fragments/ShadowStyle"
 
@@ -11,6 +11,12 @@ export const generalSettings = {
 export const searchSettings = {
   placeholder: "Search the web",
   engine: "google" as SearchEngineName,
+  forwardingLookup: {
+    "/": "/",
+    deepl: "https://deepl.com/",
+    reddit: "https://reddit.com/",
+    maps: "https://maps.google.com/",
+  } as SearchOptions["forwardingLookup"],
 }
 
 export const surfaceSettings = {

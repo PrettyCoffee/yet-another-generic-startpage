@@ -17,10 +17,11 @@ const Input = styled(TextInput)`
 `
 
 export const Searchbar = () => {
-  const [{ engine, placeholder }] = useSearchSettings()
+  const [{ engine, placeholder, forwardingLookup }] = useSearchSettings()
   const [value, setValue] = useState("")
 
-  const handleSearch = () => performSearch(value, engine, { directLink: true })
+  const handleSearch = () =>
+    performSearch(value, engine, { directLink: true, forwardingLookup })
 
   return (
     <Layout>
