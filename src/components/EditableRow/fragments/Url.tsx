@@ -1,6 +1,8 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
+import { RowText } from "./RowText"
+
 const getUrl = (url: string) => {
   try {
     return new URL(url)
@@ -18,11 +20,8 @@ const getUrlPath = (url: string) => {
   return Url.pathname + Url.search
 }
 
-const UrlWrapper = styled.div`
+const UrlWrapper = styled(RowText)`
   flex: 1;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `
 const UrlHost = styled.span`
   ${({ theme: { color } }) => css`

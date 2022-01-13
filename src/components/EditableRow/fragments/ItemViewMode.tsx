@@ -4,6 +4,7 @@ import { Edit3, Trash } from "react-feather"
 
 import { IconButton } from "../../"
 import { RowElement } from "../EditableRow"
+import { RowText } from "./RowText"
 import { Url } from "./Url"
 
 const Wrapper = styled.div`
@@ -12,15 +13,13 @@ const Wrapper = styled.div`
     width: 100%;
 
     display: flex;
+    align-items: center;
     gap: ${space.medium};
   `}
 `
 
-const Label = styled.div`
+const Label = styled(RowText)`
   width: 20%;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `
 
 const Actions = styled.div`
