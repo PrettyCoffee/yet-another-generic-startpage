@@ -20,7 +20,7 @@ const Title = styled.h3`
 `
 
 const findNewKey = (object: Record<string, string>) => {
-  const baseKey = "New Lookup"
+  const baseKey = "#new"
   if (object[baseKey] === undefined) return baseKey
 
   let i = 0
@@ -45,9 +45,10 @@ export const SearchLookup = () => {
     setSearchSettings({ ...searchSettings, forwardingLookup: copy })
   }
 
-  const handleEdit = (label: string, url: string) => {
+  const handleEdit = (oldKey: string, newKey: string, url: string) => {
     const copy = { ...forwardingLookup }
-    copy[label] = url
+    delete copy[oldKey]
+    copy[newKey] = url
     setSearchSettings({ ...searchSettings, forwardingLookup: copy })
   }
 
@@ -69,18 +70,20 @@ export const SearchLookup = () => {
   )
   return (
     <Accordion header={header} buttonLabel="lookup accordion">
-      {lookupKeys.map(key => (
-        <EditableRow
-          key={key}
-          designator="lookup"
-          label={key}
-          url={forwardingLookup[key]}
-          mode={active === key ? "edit" : "view"}
-          toggleMode={() => handleActiveChange(key)}
-          onEdit={({ label, url }) => handleEdit(label, url)}
-          onRemove={() => handleRemove(key)}
-        />
-      ))}
+      {lookupKeys
+        .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
+        .map(key => (
+          <EditableRow
+            key={key}
+            designator="lookup"
+            label={key}
+            url={forwardingLookup[key]}
+            mode={active === key ? "edit" : "view"}
+            toggleMode={() => handleActiveChange(key)}
+            onEdit={({ label, url }) => handleEdit(key, label, url)}
+            onRemove={() => handleRemove(key)}
+          />
+        ))}
       <br />
       <br />
       Note: Bookmarks are automatically included in the lookup.
