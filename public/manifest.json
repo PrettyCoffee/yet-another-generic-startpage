@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Generic startpage",
+  "name": "Yet another generic startpage",
   "icons": [
     {
       "src": "favicon.ico",
