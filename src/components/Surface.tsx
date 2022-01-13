@@ -54,5 +54,12 @@ type SurfaceProps = {
 export const Surface = ({ ...delegated }: PropsWithChildren<SurfaceProps>) => {
   const [{ shadow, ...settings }] = useSurfaceSettings()
 
-  return <Container shadow={shadow.shadow} {...settings} {...delegated} />
+  return (
+    <Container
+      tabIndex={-1}
+      shadow={shadow.shadow}
+      {...settings}
+      {...delegated}
+    />
+  )
 }
