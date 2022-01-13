@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 import styled from "@emotion/styled/macro"
+import { useBookmarks } from "@startpage/bookmarks"
 import { performSearch } from "@startpage/search"
 import { Search } from "react-feather"
 
@@ -20,8 +21,22 @@ export const Searchbar = () => {
   const [{ engine, placeholder, forwardingLookup }] = useSearchSettings()
   const [value, setValue] = useState("")
 
+  const { bookmarkGroups } = useBookmarks()
+  const bookmarkLookup = useMemo(() => {
+    const lookup: Record<string, string> = {}
+    bookmarkGroups.forEach(group =>
+      group.bookmarks.forEach(
+        bookmark => (lookup[bookmark.label] = bookmark.url)
+      )
+    )
+    return lookup
+  }, [bookmarkGroups])
+
   const handleSearch = () =>
-    performSearch(value, engine, { directLink: true, forwardingLookup })
+    performSearch(value, engine, {
+      directLink: true,
+      forwardingLookup: { ...bookmarkLookup, ...forwardingLookup },
+    })
 
   return (
     <Layout>

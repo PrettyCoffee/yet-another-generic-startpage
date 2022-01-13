@@ -81,6 +81,9 @@ export const SearchLookup = () => {
           onRemove={() => handleRemove(key)}
         />
       ))}
+      <br />
+      <br />
+      Note: Bookmarks are automatically included in the lookup.
     </Accordion>
   )
 }
