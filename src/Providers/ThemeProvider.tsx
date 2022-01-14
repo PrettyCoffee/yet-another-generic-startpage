@@ -1,8 +1,9 @@
 import { PropsWithChildren } from "react"
 
 import { css, Global, ThemeProvider as EmotionTheme } from "@emotion/react"
-import { getTheme } from "@startpage/preset"
 import { ThemeConsumer, ThemeProvider as StpgTheme } from "@startpage/theming"
+
+import { initialTheme } from "./initialData"
 
 const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap");
@@ -44,7 +45,7 @@ const globalStyles = css`
 `
 
 export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => (
-  <StpgTheme initialTheme={getTheme("nord")} persistTheme={true}>
+  <StpgTheme initialTheme={initialTheme} persistTheme={true}>
     <ThemeConsumer>
       {({ theme }) => (
         <EmotionTheme theme={theme}>

@@ -1,8 +1,8 @@
 import { createStorageContext } from "@startpage/local-storage"
 
-import { searchSettings } from "./initialData"
+import { initialSearchSettings } from "./initialData"
 
 export const {
   StorageProvider: SearchSettingsProvider,
   useStorage: useSearchSettings,
-} = createStorageContext("search", searchSettings)
+} = createStorageContext("search", initialSearchSettings)

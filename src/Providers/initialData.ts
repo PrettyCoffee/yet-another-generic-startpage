@@ -1,15 +1,18 @@
 import { InitialBookmarkGroup } from "@startpage/bookmarks"
+import { getTheme } from "@startpage/preset"
 import { SearchEngineName, SearchOptions } from "@startpage/search"
 
 import { ShadowOptions } from "../Settings/Surface/fragments/ShadowStyle"
 
-export const generalSettings = {
+export const initialGeneralSettings = {
   img: "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_p320aq1osj1vjxiz1o1_1280.gif?iv=344",
   title: "Yet another generic startpage",
   displayImg: true,
 }
 
-export const searchSettings = {
+export const initialTheme = getTheme("nord")
+
+export const initialSearchSettings = {
   placeholder: "Search the web",
   engine: "google" as SearchEngineName,
   forwardingLookup: {
@@ -20,7 +23,7 @@ export const searchSettings = {
   } as SearchOptions["forwardingLookup"],
 }
 
-export const surfaceSettings = {
+export const initialSurfaceSettings = {
   shadow: {
     amount: 5,
     blur: 0,

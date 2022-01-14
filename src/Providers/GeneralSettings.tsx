@@ -1,8 +1,8 @@
 import { createStorageContext } from "@startpage/local-storage"
 
-import { generalSettings } from "./initialData"
+import { initialGeneralSettings } from "./initialData"
 
 export const {
   StorageProvider: GeneralSettingsProvider,
   useStorage: useGeneralSettings,
-} = createStorageContext("general", generalSettings)
+} = createStorageContext("general", initialGeneralSettings)
