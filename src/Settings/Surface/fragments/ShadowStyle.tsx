@@ -52,7 +52,7 @@ export const ShadowStyle = () => {
       <Slider
         label="Shadow count"
         value={amount}
-        min={0}
+        min={1}
         max={32}
         step={1}
         onChange={setAmount}
