@@ -14,8 +14,8 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@headlessui/react": "^1.4.2",
-    "@startpage/bookmarks": "^0.2.2",
+    "@headlessui/react": "^1.4.3",
+    "@startpage/bookmarks": "^0.2.3",
     "@startpage/local-storage": "^0.2.2",
     "@startpage/preset": "^0.2.0",
     "@startpage/search": "^0.2.0",
