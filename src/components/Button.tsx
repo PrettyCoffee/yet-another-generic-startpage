@@ -47,6 +47,6 @@ type ButtonProps = {
   disabled?: boolean
 }
 
-export const Button = ({ ...props }: PropsWithChildren<ButtonProps>) => (
-  <NativeButton {...props} />
+export const Button = ({ ...delegated }: PropsWithChildren<ButtonProps>) => (
+  <NativeButton {...delegated} />
 )
