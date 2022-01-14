@@ -1,0 +1,61 @@
+{
+  "gnrc-general": {
+    "img": "https://c.tenor.com/Ba1jLX0Ia6oAAAAd/dark-souls.gif",
+    "title": "Amazing chest ahead",
+    "displayImg": true
+  },
+  "gnrc-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#282A30",
+        "base": "#32343C",
+        "surface": "#3C3E48",
+        "highlight": "#464954"
+      },
+      "fg": {
+        "shade": "#A88F5F",
+        "base": "#BFAD8A",
+        "surface": "#D6CBB5",
+        "highlight": "#EEE9DF"
+      },
+      "primary": {
+        "bg": "#653426",
+        "base": "#BF6E57",
+        "fg": "#E5C5BC"
+      },
+      "secondary": {
+        "bg": "#2E241D",
+        "base": "#5C473A",
+        "fg": "#8A6B57"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "gnrc-surface": {
+    "shadow": {
+      "amount": 6,
+      "blur": 0,
+      "offset": 12,
+      "shadow": "12px 12px 0px rgb(101, 52, 38), 24px 24px 0px rgb(90, 48.8, 36.2), 36px 36px 0px rgb(79, 45.6, 34.4), 48px 48px 0px rgb(68, 42.4, 32.6), 60px 60px 0px rgb(57, 39.2, 30.8), 72px 72px 0px rgb(46, 36, 29)"
+    },
+    "borderRadius": 0,
+    "maxWidth": 1100
+  }
+}

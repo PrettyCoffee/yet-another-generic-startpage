@@ -1,0 +1,61 @@
+{
+  "gnrc-general": {
+    "img": "https://i.gifer.com/7gxM.gif",
+    "title": "Yet another generic startpage",
+    "displayImg": true
+  },
+  "gnrc-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#131316",
+        "base": "#18181B",
+        "surface": "#1D1D20",
+        "highlight": "#222226"
+      },
+      "fg": {
+        "shade": "#969696",
+        "base": "#BBBBBB",
+        "surface": "#E0E0E0",
+        "highlight": "#FFFFFF"
+      },
+      "primary": {
+        "bg": "#777777",
+        "base": "#EEEEEE",
+        "fg": "#FFFFFF"
+      },
+      "secondary": {
+        "bg": "#252528",
+        "base": "#494950",
+        "fg": "#6E6E78"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "gnrc-surface": {
+    "shadow": {
+      "amount": 5,
+      "blur": 0,
+      "offset": 12,
+      "shadow": "12px 12px 0px rgb(119, 119, 119), 24px 24px 0px rgb(98.5, 98.5, 99.25), 36px 36px 0px rgb(78, 78, 79.5), 48px 48px 0px rgb(57.5, 57.5, 59.75), 60px 60px 0px rgb(37, 37, 40)"
+    },
+    "borderRadius": 32,
+    "maxWidth": 1100
+  }
+}

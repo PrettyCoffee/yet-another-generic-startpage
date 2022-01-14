@@ -1,0 +1,61 @@
+{
+  "gnrc-general": {
+    "img": "https://64.media.tumblr.com/54a945edd2641e20859d6f6537cd7423/tumblr_pwa4bogz4N1qze3hdo2_r1_500.gifv",
+    "title": "Lain is Lain.",
+    "displayImg": true
+  },
+  "gnrc-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#08151E",
+        "base": "#0A1A25",
+        "surface": "#0C1F2C",
+        "highlight": "#0E2434"
+      },
+      "fg": {
+        "shade": "#7F9887",
+        "base": "#A6B7AB",
+        "surface": "#CDD6CF",
+        "highlight": "#F3F5F4"
+      },
+      "primary": {
+        "bg": "#12252E",
+        "base": "#234A5C",
+        "fg": "#356F8B"
+      },
+      "secondary": {
+        "bg": "#2B0C17",
+        "base": "#56182F",
+        "fg": "#812446"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "gnrc-surface": {
+    "shadow": {
+      "amount": 1,
+      "blur": 0,
+      "offset": 12,
+      "shadow": "12px 12px 0px #12252E"
+    },
+    "borderRadius": 0,
+    "maxWidth": 1100
+  }
+}
