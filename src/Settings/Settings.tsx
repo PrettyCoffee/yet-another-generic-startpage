@@ -4,6 +4,7 @@ import styled from "@emotion/styled/macro"
 import { Surface as SurfaceElement } from "../components"
 import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
+import { DangerZone } from "./DangerZone"
 import { General } from "./General"
 import { Search } from "./Search"
 import { Surface } from "./Surface"
@@ -26,5 +27,6 @@ export const Settings = () => (
     <Surface />
     <Bookmarks />
     <Backup />
+    <DangerZone />
   </SettingsSurface>
 )
