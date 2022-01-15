@@ -11,14 +11,14 @@ import { ThemeProvider } from "./ThemeProvider"
 
 export const Providers = ({ children }: PropsWithChildren<unknown>) => (
   <StoragePrefixProvider prefix="gnrc-">
-    <ThemeProvider>
-      <BookmarkProvider initialBookmarks={initialBookmarks}>
-        <GeneralSettingsProvider>
-          <SearchSettingsProvider>
-            <SurfaceSettingsProvider>{children}</SurfaceSettingsProvider>
-          </SearchSettingsProvider>
-        </GeneralSettingsProvider>
-      </BookmarkProvider>
-    </ThemeProvider>
+    <BookmarkProvider initialBookmarks={initialBookmarks}>
+      <GeneralSettingsProvider>
+        <SearchSettingsProvider>
+          <SurfaceSettingsProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </SurfaceSettingsProvider>
+        </SearchSettingsProvider>
+      </GeneralSettingsProvider>
+    </BookmarkProvider>
   </StoragePrefixProvider>
 )

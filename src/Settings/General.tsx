@@ -1,6 +1,7 @@
 import { Section, Switch, TextInput } from "../components"
 import { ImageInput } from "../components/TextInputs/ImageInput"
 import { useGeneralSettings } from "../Providers"
+import { Note } from "./fragments/Note"
 
 export const General = () => {
   const [generalSettings, setGeneralSettings] = useGeneralSettings()
@@ -13,6 +14,9 @@ export const General = () => {
 
   const setDispalyImg = (displayImg: boolean) =>
     setGeneralSettings({ ...generalSettings, displayImg })
+
+  const setFont = (font: string) =>
+    setGeneralSettings({ ...generalSettings, font })
 
   return (
     <Section title="General">
@@ -31,6 +35,14 @@ export const General = () => {
         onChange={setDispalyImg}
         label="Display image"
       />
+      <br />
+      <br />
+      <TextInput label="Font" value={generalSettings.font} onChange={setFont} />
+      <Note>
+        Fonts are automatically fetched from{" "}
+        <a href="https://fonts.google.com/">google fonts</a> if possible. But
+        you can also use local fonts.
+      </Note>
     </Section>
   )
 }

@@ -10,8 +10,15 @@ const Text = styled(CenterLayout)`
     margin-top: ${space.medium};
     color: ${color.fg.base};
     mark {
-      color: ${color.primary.fg};
+      color: ${color.fg.surface};
       background-color: transparent;
+    }
+    a {
+      color: ${color.primary.fg};
+      text-decoration: underline;
+      :hover {
+        color: ${color.primary.base};
+      }
     }
   `}
 `
