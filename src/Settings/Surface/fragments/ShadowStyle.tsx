@@ -18,34 +18,35 @@ export type ShadowOptions = ShadowParameters & {
 }
 
 export const ShadowStyle = () => {
-  const {
-    theme: { color },
-  } = useTheme()
+  const { theme } = useTheme()
+  const { color } = theme
+
   const [surfaceSettings, setSurfaceSettings] = useSurfaceSettings()
   const [amount, setAmount] = useState(surfaceSettings.shadow.amount)
   const [blur, setBlur] = useState(surfaceSettings.shadow.blur)
   const [offset, setOffset] = useState(surfaceSettings.shadow.offset)
 
+  const shadowParams = useMemo(
+    () => ({ amount, blur, offset }),
+    [amount, blur, offset]
+  )
+
   const shadow = useMemo(() => {
-    const shadowParams = { amount, blur, offset }
     const startColor = color.primary.bg
     const endColor = color.secondary.bg
     return createShadowGradiant(startColor, endColor, shadowParams)
-  }, [amount, blur, color, offset])
+  }, [color.primary.bg, color.secondary.bg, shadowParams])
 
   useEffect(() => {
-    if (surfaceSettings.shadow.shadow !== shadow) {
+    if (surfaceSettings.shadow.shadow !== shadow)
       setSurfaceSettings({
         ...surfaceSettings,
         shadow: {
-          amount,
-          blur,
-          offset,
+          ...shadowParams,
           shadow,
         },
       })
-    }
-  }, [amount, blur, offset, setSurfaceSettings, shadow, surfaceSettings])
+  }, [surfaceSettings, setSurfaceSettings, shadow, shadowParams])
 
   return (
     <CenterLayout>
