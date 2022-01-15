@@ -6,6 +6,7 @@ import { Download } from "react-feather"
 import { Button, Section, FileInput } from "../components"
 import { Checkbox } from "../components/Checkbox"
 import { CenterLayout } from "./fragments/CenterLayout"
+import { Note } from "./fragments/Note"
 import { SpacedLayout } from "./fragments/SpacedLayout"
 
 export const Backup = () => {
@@ -91,11 +92,7 @@ export const Backup = () => {
           Download <Download />
         </Button>
       </SpacedLayout>
-      <br />
-      <br />
-      <CenterLayout as="p">
-        Note: Both, import and download, will only use the checked options!
-      </CenterLayout>
+      <Note>Both, import and download, will only use the checked options!</Note>
     </Section>
   )
 }

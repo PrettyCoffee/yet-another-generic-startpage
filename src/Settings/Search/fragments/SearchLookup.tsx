@@ -6,6 +6,7 @@ import { Plus } from "react-feather"
 
 import { Accordion, EditableRow, IconButton } from "../../../components"
 import { useSearchSettings } from "../../../Providers"
+import { Note } from "../../fragments/Note"
 
 const HeaderWrapper = styled.div`
   ${({ theme: { space } }) => css`
@@ -69,24 +70,26 @@ export const SearchLookup = () => {
     </HeaderWrapper>
   )
   return (
-    <Accordion header={header} buttonLabel="lookup accordion">
-      {lookupKeys
-        .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
-        .map(key => (
-          <EditableRow
-            key={key}
-            designator="lookup"
-            label={key}
-            url={forwardingLookup[key]}
-            mode={active === key ? "edit" : "view"}
-            toggleMode={() => handleActiveChange(key)}
-            onEdit={({ label, url }) => handleEdit(key, label, url)}
-            onRemove={() => handleRemove(key)}
-          />
-        ))}
-      <br />
-      <br />
-      Note: Bookmarks are automatically included in the lookup.
-    </Accordion>
+    <>
+      <Accordion header={header} buttonLabel="lookup accordion">
+        {lookupKeys
+          .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
+          .map(key => (
+            <EditableRow
+              key={key}
+              designator="lookup"
+              label={key}
+              url={forwardingLookup[key]}
+              mode={active === key ? "edit" : "view"}
+              toggleMode={() => handleActiveChange(key)}
+              onEdit={({ label, url }) => handleEdit(key, label, url)}
+              onRemove={() => handleRemove(key)}
+            />
+          ))}
+      </Accordion>
+      <Note>
+        Bookmarks are <mark>automatically</mark> included in the lookup.
+      </Note>
+    </>
   )
 }
