@@ -8,23 +8,23 @@ import { Panel } from "./fragments/Panel"
 type AccordionProps = {
   header: string | JSX.Element
   buttonLabel?: string
+  defaultOpen?: boolean
 }
 
 export const Accordion = ({
   header,
   buttonLabel,
+  defaultOpen,
   children,
-}: PropsWithChildren<AccordionProps>) => {
-  return (
-    <Disclosure>
-      {({ open }) => (
-        <>
-          <HeaderButton open={open} label={buttonLabel}>
-            {header}
-          </HeaderButton>
-          <Panel>{children}</Panel>
-        </>
-      )}
-    </Disclosure>
-  )
-}
+}: PropsWithChildren<AccordionProps>) => (
+  <Disclosure defaultOpen={defaultOpen}>
+    {({ open }) => (
+      <>
+        <HeaderButton open={open} label={buttonLabel}>
+          {header}
+        </HeaderButton>
+        <Panel>{children}</Panel>
+      </>
+    )}
+  </Disclosure>
+)
