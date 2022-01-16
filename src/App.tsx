@@ -19,12 +19,10 @@ const Layout = styled.div`
   `}
 `
 
-const App = () => {
-  return (
-    <Layout>
-      <ContentSwitch leftContent={Startpage} rightContent={Settings} />
-    </Layout>
-  )
-}
+const App = () => (
+  <Layout>
+    <ContentSwitch leftContent={Startpage} rightContent={Settings} />
+  </Layout>
+)
 
 export default App

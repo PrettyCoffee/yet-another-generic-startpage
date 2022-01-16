@@ -3,14 +3,17 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import App from "./App"
+import { ErrorBoundary } from "./ErrorBoundary"
 import { Providers } from "./Providers"
 import reportWebVitals from "./reportWebVitals"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Providers>
-      <App />
-    </Providers>
+    <ErrorBoundary>
+      <Providers>
+        <App />
+      </Providers>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById("root")
 )
