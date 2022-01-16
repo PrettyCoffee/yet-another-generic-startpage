@@ -1,0 +1,62 @@
+{
+  "yags-general": {
+    "img": "https://github.com/PrettyCoffee/yet-another-generic-startpage/blob/master/themes/avatar.png?raw=true",
+    "title": "Yet another generic startpage",
+    "displayImg": true,
+    "font": "Quicksand"
+  },
+  "yags-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#20232A",
+        "base": "#282C34",
+        "surface": "#30353E",
+        "highlight": "#383E49"
+      },
+      "fg": {
+        "shade": "#8691A2",
+        "base": "#B0B7C2",
+        "surface": "#DADDE2",
+        "highlight": "#FFFFFF"
+      },
+      "primary": {
+        "bg": "#802300",
+        "base": "#FF4500",
+        "fg": "#FFA280"
+      },
+      "secondary": {
+        "bg": "#362F2A",
+        "base": "#6D5D53",
+        "fg": "#9F8D81"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "yags-surface": {
+    "shadow": {
+      "amount": 3,
+      "blur": 0,
+      "offset": 5,
+      "shadow": "5px 5px 0px rgb(128, 35, 0), 10px 10px 0px rgb(91, 41, 21), 15px 15px 0px rgb(54, 47, 42)"
+    },
+    "borderRadius": 24,
+    "maxWidth": 1000
+  }
+}
