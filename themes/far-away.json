@@ -1,0 +1,62 @@
+{
+  "yags-general": {
+    "img": "https://www.film-rezensionen.de/wp-content/uploads/2014/12/I-Want-to-Eat-Your-Pancreas-Szene-3.jpg",
+    "title": "Take Me Far Away",
+    "displayImg": true,
+    "font": "Quicksand"
+  },
+  "yags-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#222229",
+        "base": "#2b2a32",
+        "surface": "#2b2a32",
+        "highlight": "#3C3B47"
+      },
+      "fg": {
+        "shade": "#BC78B3",
+        "base": "#D6ACD0",
+        "surface": "white",
+        "highlight": "#FFFFFF"
+      },
+      "primary": {
+        "bg": "#26679A",
+        "base": "#99C4E6",
+        "fg": "#FFFFFF"
+      },
+      "secondary": {
+        "bg": "#A4CD93",
+        "base": "#A4CD93",
+        "fg": "#cea3c9"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "yags-surface": {
+    "shadow": {
+      "amount": 3,
+      "blur": 7,
+      "offset": 5,
+      "shadow": "5px 5px 7px rgb(38, 103, 154), 10px 10px 7px rgb(101, 154, 150.5), 15px 15px 7px rgb(164, 205, 147)"
+    },
+    "borderRadius": 10,
+    "maxWidth": 1300
+  }
+}
