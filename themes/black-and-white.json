@@ -2,7 +2,8 @@
   "gnrc-general": {
     "img": "https://i.gifer.com/7gxM.gif",
     "title": "Yet another generic startpage",
-    "displayImg": true
+    "displayImg": true,
+    "font": "Quicksand"
   },
   "gnrc-theme": {
     "inverted": false,

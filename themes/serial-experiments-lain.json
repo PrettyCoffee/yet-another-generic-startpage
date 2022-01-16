@@ -2,7 +2,8 @@
   "gnrc-general": {
     "img": "https://64.media.tumblr.com/54a945edd2641e20859d6f6537cd7423/tumblr_pwa4bogz4N1qze3hdo2_r1_500.gifv",
     "title": "Lain is Lain.",
-    "displayImg": true
+    "displayImg": true,
+    "font": "Quicksand"
   },
   "gnrc-theme": {
     "inverted": false,

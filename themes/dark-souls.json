@@ -2,7 +2,8 @@
   "gnrc-general": {
     "img": "https://c.tenor.com/Ba1jLX0Ia6oAAAAd/dark-souls.gif",
     "title": "Amazing chest ahead",
-    "displayImg": true
+    "displayImg": true,
+    "font": "Quicksand"
   },
   "gnrc-theme": {
     "inverted": false,

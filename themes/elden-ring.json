@@ -2,7 +2,8 @@
   "gnrc-general": {
     "img": "https://i.redd.it/toczbjyrfvs41.jpg",
     "title": "Ohhh Elden Ring",
-    "displayImg": true
+    "displayImg": true,
+    "font": "Quicksand"
   },
   "gnrc-theme": {
     "inverted": false,
