@@ -1,11 +1,11 @@
 {
-  "gnrc-general": {
+  "yags-general": {
     "img": "https://c.tenor.com/Ba1jLX0Ia6oAAAAd/dark-souls.gif",
     "title": "Amazing chest ahead",
     "displayImg": true,
     "font": "Quicksand"
   },
-  "gnrc-theme": {
+  "yags-theme": {
     "inverted": false,
     "color": {
       "name": "custom",
@@ -49,7 +49,7 @@
       "largest": "3rem"
     }
   },
-  "gnrc-surface": {
+  "yags-surface": {
     "shadow": {
       "amount": 6,
       "blur": 0,

@@ -1,11 +1,11 @@
 {
-  "gnrc-general": {
+  "yags-general": {
     "img": "https://i.gifer.com/7gxM.gif",
     "title": "Yet another generic startpage",
     "displayImg": true,
     "font": "Quicksand"
   },
-  "gnrc-theme": {
+  "yags-theme": {
     "inverted": false,
     "color": {
       "name": "custom",
@@ -49,7 +49,7 @@
       "largest": "3rem"
     }
   },
-  "gnrc-surface": {
+  "yags-surface": {
     "shadow": {
       "amount": 5,
       "blur": 0,

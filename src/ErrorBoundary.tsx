@@ -6,6 +6,8 @@ import {
   FallbackProps,
 } from "react-error-boundary"
 
+import { storagePrefix } from "./Providers/Providers"
+
 const Wrapper = styled.div`
   width: 100vw;
   font-family: sans-serif;
@@ -26,9 +28,13 @@ const Error = styled.blockquote`
   border: red 2px solid;
 `
 
+const prefixedKeys = Object.keys(localStorage).filter(key =>
+  key.startsWith(storagePrefix)
+)
+
 const getLSContent = () => {
   const result: Record<string, unknown> = {}
-  Object.keys(localStorage).map(key => {
+  prefixedKeys.map(key => {
     try {
       result[key] = JSON.parse(localStorage[key])
     } catch {
@@ -51,7 +57,7 @@ const DeleteButtons = () => {
   return (
     <>
       <div>
-        {Object.keys(localStorage).map(key => (
+        {prefixedKeys.map(key => (
           <Button onClick={() => deleteKey(key)}>Delete {key}</Button>
         ))}
       </div>

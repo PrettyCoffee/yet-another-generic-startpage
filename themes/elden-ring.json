@@ -1,11 +1,11 @@
 {
-  "gnrc-general": {
+  "yags-general": {
     "img": "https://i.redd.it/toczbjyrfvs41.jpg",
     "title": "Ohhh Elden Ring",
     "displayImg": true,
     "font": "Quicksand"
   },
-  "gnrc-theme": {
+  "yags-theme": {
     "inverted": false,
     "color": {
       "name": "custom",
@@ -49,7 +49,7 @@
       "largest": "3rem"
     }
   },
-  "gnrc-surface": {
+  "yags-surface": {
     "shadow": {
       "amount": 2,
       "blur": 0,

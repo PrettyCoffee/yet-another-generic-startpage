@@ -9,8 +9,10 @@ import { SearchSettingsProvider } from "./SearchSettings"
 import { SurfaceSettingsProvider } from "./SurfaceSettings"
 import { ThemeProvider } from "./ThemeProvider"
 
+export const storagePrefix = "yags-"
+
 export const Providers = ({ children }: PropsWithChildren<unknown>) => (
-  <StoragePrefixProvider prefix="gnrc-">
+  <StoragePrefixProvider prefix={storagePrefix}>
     <BookmarkProvider initialBookmarks={initialBookmarks}>
       <GeneralSettingsProvider>
         <SearchSettingsProvider>
