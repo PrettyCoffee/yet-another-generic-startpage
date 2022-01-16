@@ -1,6 +1,7 @@
 {
   "name": "yet-another-generic-startpage",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "homepage": ".",
   "scripts": {
