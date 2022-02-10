@@ -20,4 +20,4 @@ export const changelog: Changelog = sortChangelogDesc([
 ])
 
 export const firstVersion = changelog.slice(-1)[0].version
-export const lastVersion = changelog[0].version
+export const latestVersion = changelog[0].version

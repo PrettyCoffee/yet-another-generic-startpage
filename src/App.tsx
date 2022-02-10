@@ -2,6 +2,8 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
 import { Changelog } from "./Changelog/Changelog"
+import { latestVersion } from "./Changelog/data"
+import { useVersion } from "./Changelog/VersionContext"
 import { ContentSwitch, HashRouter, HashRoutes } from "./components"
 import { useUrlHash } from "./components/HashRouter/utils/useUrlHash"
 import { Settings } from "./Settings/Settings"
@@ -47,7 +49,13 @@ const routes: HashRoutes = {
 }
 
 const App = () => {
+  const [version, setVersion] = useVersion()
   const urlHash = useUrlHash()
+
+  if (version !== latestVersion) {
+    setVersion(latestVersion)
+    window.location.hash = changelogHash
+  }
 
   const showChangelog = urlHash === changelogHash
   const linkProps = {
