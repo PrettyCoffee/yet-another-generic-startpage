@@ -18,6 +18,9 @@ export const General = () => {
   const setFont = (font: string) =>
     setGeneralSettings({ ...generalSettings, font })
 
+  const setEnableFonts = (enableFonts: boolean) =>
+    setGeneralSettings({ ...generalSettings, enableFonts })
+
   return (
     <Section title="General">
       <TextInput
@@ -38,10 +41,17 @@ export const General = () => {
       <br />
       <br />
       <TextInput label="Font" value={generalSettings.font} onChange={setFont} />
+      <br />
+      <br />
+      <Switch
+        checked={generalSettings.enableFonts}
+        onChange={setEnableFonts}
+        label="Google fonts"
+      />
       <Note>
         Fonts are automatically fetched from{" "}
-        <a href="https://fonts.google.com/">google fonts</a> if possible. But
-        you can also use local fonts.
+        <a href="https://fonts.google.com/">google fonts</a> if enabled and
+        possible. But you can also use local fonts.
       </Note>
     </Section>
   )

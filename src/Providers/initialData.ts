@@ -9,6 +9,7 @@ export const initialGeneralSettings = {
   title: "Yet another generic startpage",
   displayImg: true,
   font: "Quicksand",
+  enableFonts: false,
 }
 
 export const initialTheme = getTheme("nord")

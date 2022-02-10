@@ -6,14 +6,17 @@ import { ThemeConsumer, ThemeProvider as StpgTheme } from "@startpage/theming"
 import { useGeneralSettings } from "./GeneralSettings"
 import { initialTheme } from "./initialData"
 
-const getGlobalStyles = (font: string) => {
+const getGlobalStyles = (font?: string, enableFonts?: boolean) => {
   const fontBaseUrl =
-    "https://fonts.googleapis.com/css?family=" + font.replace(" ", "+")
+    "https://fonts.googleapis.com/css?family=" + font?.replace(" ", "+")
 
   return css`
-    ${`@import url("${fontBaseUrl}")`};
-    ${`@import url("${fontBaseUrl}:500")`};
-    ${`@import url("${fontBaseUrl}:700")`};
+    ${enableFonts &&
+    css`
+      @import url("${fontBaseUrl}");
+      @import url("${fontBaseUrl}:500");
+      @import url("${fontBaseUrl}:700");
+    `}
 
     body {
       font-family: "${font}", sans-serif;
@@ -54,8 +57,8 @@ const getGlobalStyles = (font: string) => {
 }
 
 export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => {
-  const [{ font }] = useGeneralSettings()
-  const globalStyles = getGlobalStyles(font)
+  const [{ font, enableFonts }] = useGeneralSettings()
+  const globalStyles = getGlobalStyles(font, enableFonts)
 
   return (
     <StpgTheme initialTheme={initialTheme} persistTheme={true}>
