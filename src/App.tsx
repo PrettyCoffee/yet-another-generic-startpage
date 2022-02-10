@@ -16,10 +16,7 @@ const Link = styled.a`
     bottom: ${space.small};
     right: ${space.small};
     :hover {
-      color: ${color.primary.base};
-    }
-    :visited {
-      color: ${color.fg.base};
+      color: ${color.primary.fg};
     }
   `}
 `
@@ -35,6 +32,7 @@ const Layout = styled.div`
     align-items: center;
 
     background-color: ${color.bg.base};
+    color: ${color.fg.base};
   `}
 `
 
