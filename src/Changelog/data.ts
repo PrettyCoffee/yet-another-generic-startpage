@@ -7,6 +7,10 @@ export type Changelog = {
 
 export const changelog: Changelog = sortChangelogDesc([
   {
+    version: "v1.1.1",
+    changes: ["fix changelog link styling bug"],
+  },
+  {
     version: "v1.1.0",
     changes: [
       "added google fonts toggle (folks tend to dislike google)",
