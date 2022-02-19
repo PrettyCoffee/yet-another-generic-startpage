@@ -6,6 +6,7 @@ import { Backup } from "./Backup"
 import { Bookmarks } from "./Bookmarks"
 import { DangerZone } from "./DangerZone"
 import { General } from "./General"
+import { Minify } from "./Minify"
 import { Search } from "./Search"
 import { Surface } from "./Surface"
 import { Theme } from "./Theme"
@@ -27,6 +28,7 @@ export const Settings = () => (
     <Surface />
     <Bookmarks />
     <Backup />
+    <Minify />
     <DangerZone />
   </SettingsSurface>
 )

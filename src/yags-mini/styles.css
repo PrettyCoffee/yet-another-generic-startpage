@@ -1,0 +1,224 @@
+@import url("./variables.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: currentColor;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  min-width: 600px;
+  overflow: hidden;
+  
+  font-family: var(--font-family), sans-serif;
+  font-weight: 500;
+  background-color: var(--color-bg-base);
+}
+
+.visually-hidden {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0px;
+  border: 0px none;
+}
+
+/**
+ * Layout
+ **/
+
+.surface {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: var(--space-largest);
+  right: var(--space-largest);
+  margin: auto;
+  height: max-content;
+  max-width: var(--surface-maxWidth);
+
+  display: flex;
+
+  color: var(--color-fg-surface);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--surface-borderRadius);
+  overflow: hidden;
+  border: var(--space-smallest) solid var(--color-primary-base);
+  box-shadow: var(--surface-shadow);
+}
+
+.surface > img {
+  height: var(--picture-size);
+  width: var(--picture-size);
+  object-fit: cover;
+  display: var(--display-image);
+}
+
+.surface > main {
+  padding: var(--space-large);
+  flex: 1;
+  max-width: calc(100% - var(--picture-size));
+
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Title
+ **/
+
+.surface > main > h1 {
+  color: var(--color-primary-fg);
+  font-size: var(--space-large);
+  font-weight: 500;
+  margin: 0 0 var(--space-large) 0;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+/**
+ * Searchbar
+ **/
+
+#searchbar {
+  display: flex;
+  align-items: center;
+}
+
+#searchbar > button {
+  width: calc(var(--space-medium) * 2);
+  height: calc(var(--space-medium) * 2);
+  color: var(--color-primary-fg);
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchbar > button > .feather-search {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#searchbar > button:hover {
+  color: var(--color-primary-base);
+}
+
+#searchbar > button:focus-visible {
+  color: var(--color-primary-base);
+  background: var(--color-bg-highlight);
+  outline: var(--space-smallest) solid var(--color-fg-shade);
+}
+
+#searchbar > input {
+  height: calc(var(--space-medium) * 2);
+  flex: 1;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: var(--space-smallest) solid var(--color-fg-base);
+}
+
+#searchbar > input:focus-visible {
+  border-color: var(--color-primary-base);
+}
+
+/**
+ * Bookmarks
+ **/
+
+#bookmarks {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.bookmark-group {
+  width: calc(100% / var(--group-count));
+}
+
+.bookmark-group > h2 {
+  color: var(--color-secondary-fg);
+  font-size: var(--space-medium);
+  font-weight: 500;
+  margin: 0;
+}
+
+.bookmark-group > ul {
+  margin: 0;
+  padding: 0;
+  padding-right: var(--space-medium);
+}
+
+.bookmark-group > ul > li {
+  position: relative;
+  list-style: none;
+}
+
+.bookmark-group > ul > li > a {
+  display: block;
+  padding: 2px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 100%;
+  outline: none;
+}
+
+.bookmark-group > ul > li > a:hover::before,
+.bookmark-group > ul > li > a:focus-visible::before {
+  content: ">";
+  position: absolute;
+  left: -0.75rem;
+}
+
+/**
+ * YAGS link
+ **/
+a#yags-link {
+  color: var(--color-primary-fg);
+  position: fixed;
+  bottom: var(--space-small);
+  right: var(--space-small);
+}
+
+a#yags-link:hover,
+a#yags-link:focus-visible {
+  color: var(--color-fg-base);
+  text-decoration: underline;
+}
