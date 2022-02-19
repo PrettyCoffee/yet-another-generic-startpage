@@ -10,6 +10,10 @@ const SettingsSurface = styled(Surface)`
     overflow-y: auto;
     max-height: calc(100vh - 6rem);
     padding: ${space.large};
+
+    h2 {
+      font-size: 1rem;
+    }
   `}
 `
 

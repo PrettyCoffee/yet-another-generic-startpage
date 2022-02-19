@@ -7,8 +7,12 @@ export type Changelog = {
 
 export const changelog: Changelog = sortChangelogDesc([
   {
+    version: "v1.2.0",
+    changes: ["added Mini YAGS export (settings -> Mini-YAGS)"],
+  },
+  {
     version: "v1.1.1",
-    changes: ["fix changelog link styling bug"],
+    changes: ["fixed changelog link styling bug"],
   },
   {
     version: "v1.1.0",
