@@ -22,7 +22,7 @@
     "@startpage/search": "^0.2.0",
     "@startpage/theming": "^0.2.4",
     "color": "^4.2.0",
-    "jszip": "^3.7.1",
+    "jszip": "^3.8.0",
     "raw-loader": "^4.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
