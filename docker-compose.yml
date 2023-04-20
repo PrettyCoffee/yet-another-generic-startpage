@@ -1,0 +1,9 @@
+version: "3.8"
+
+# $ docker compose up -d
+
+services:
+  client:
+    build: ./
+    ports:
+      - "8080:80"
