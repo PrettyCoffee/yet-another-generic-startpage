@@ -26,9 +26,9 @@ To create a `Mini-YAGS` copy:
 2. Click on the arrows in the top right corner
 3. Design your startpage
 4. Scroll down to the `Mini-YAGS` section and click on `Zip me a copy!`
-5. Extract the files on your local system
+5. Extract the files in the zip on your local system
 
-To apply it for new tabs, install one of the the extension and set `file:///C:/path/to/your/mini-yags/index.html` as new tab url.
+To apply it for new tabs, install one of the the new tab override extensions and set `file:///C:/path/to/your/mini-yags/index.html` as new tab url.
 
 ### Github Pages with Mini Yags
 
