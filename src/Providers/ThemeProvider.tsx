@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react"
 import { css, Global, ThemeProvider as EmotionTheme } from "@emotion/react"
 import { ThemeConsumer, ThemeProvider as StpgTheme } from "@startpage/theming"
 
+import { useCustomCss } from "./CustomCss"
 import { useGeneralSettings } from "./GeneralSettings"
 import { initialTheme } from "./initialData"
 
@@ -57,6 +58,7 @@ const getGlobalStyles = (font?: string, enableFonts?: boolean) => {
 }
 
 export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => {
+  const [customCss] = useCustomCss()
   const [{ font, enableFonts }] = useGeneralSettings()
   const globalStyles = getGlobalStyles(font, enableFonts)
 
@@ -66,6 +68,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => {
         {({ theme }) => (
           <EmotionTheme theme={theme}>
             <Global styles={globalStyles} />
+            <Global styles={customCss} />
             {children}
           </EmotionTheme>
         )}

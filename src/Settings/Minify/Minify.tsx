@@ -1,6 +1,7 @@
 import JSZip from "jszip"
 
 import { Button, Section } from "../../components"
+import { useCustomCss } from "../../Providers/CustomCss"
 import {
   getMiniYagsFile,
   useMiniCssVars,
@@ -10,6 +11,7 @@ import {
 } from "./utils"
 
 export const Minify = () => {
+  const [customCss] = useCustomCss()
   const miniHtml = useMiniHtml()
   const miniJs = useMiniJs()
   const miniCssVars = useMiniCssVars()
@@ -21,6 +23,7 @@ export const Minify = () => {
     zip.file("index.html", miniHtml)
     zip.file("scripts.js", miniJs)
     zip.file("variables.css", miniCssVars)
+    zip.file("custom-styles.css", customCss)
     zip.file("styles.css", miniStyles)
     zip.file("favicon.ico", miniFavicon)
 

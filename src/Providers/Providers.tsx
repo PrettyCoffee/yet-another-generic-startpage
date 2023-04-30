@@ -4,6 +4,7 @@ import { BookmarkProvider } from "@startpage/bookmarks"
 import { StoragePrefixProvider } from "@startpage/local-storage"
 
 import { VersionProvider } from "../Changelog/VersionContext"
+import { CustomCssProvider } from "./CustomCss"
 import { GeneralSettingsProvider } from "./GeneralSettings"
 import { initialBookmarks } from "./initialData"
 import { SearchSettingsProvider } from "./SearchSettings"
@@ -17,11 +18,13 @@ export const Providers = ({ children }: PropsWithChildren<unknown>) => (
     <BookmarkProvider initialBookmarks={initialBookmarks}>
       <VersionProvider>
         <GeneralSettingsProvider>
-          <SearchSettingsProvider>
-            <SurfaceSettingsProvider>
-              <ThemeProvider>{children}</ThemeProvider>
-            </SurfaceSettingsProvider>
-          </SearchSettingsProvider>
+          <CustomCssProvider>
+            <SearchSettingsProvider>
+              <SurfaceSettingsProvider>
+                <ThemeProvider>{children}</ThemeProvider>
+              </SurfaceSettingsProvider>
+            </SearchSettingsProvider>
+          </CustomCssProvider>
         </GeneralSettingsProvider>
       </VersionProvider>
     </BookmarkProvider>

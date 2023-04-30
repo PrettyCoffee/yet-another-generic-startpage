@@ -17,7 +17,7 @@ const GroupWrapper = styled.div<Pick<GroupProps, "count">>`
 const Title = styled.h2`
   ${({ theme: { color, space } }) => css`
     color: ${color.secondary.fg};
-    font-size: calc(${space.medium});
+    font-size: ${space.medium};
     font-weight: 500;
     margin: 0;
   `}
