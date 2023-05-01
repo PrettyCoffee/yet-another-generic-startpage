@@ -38,9 +38,8 @@ const HeaderButton = styled(Listbox.Button)<Pick<SelectHeaderProps, "open">>`
   `}
 `
 
-const HeaderText = styled.span`
-  ${({ theme: { color, space }, placeholder }) => css`
-    font-size: ${space.medium};
+const HeaderText = styled.span(
+  ({ theme: { color }, placeholder }) => css`
     flex: 1;
     text-align: left;
     overflow-x: hidden;
@@ -50,8 +49,8 @@ const HeaderText = styled.span`
     css`
       color: ${color.fg.shade};
     `}
-  `}
-`
+  `
+)
 
 export type SelectHeaderProps = {
   label?: string

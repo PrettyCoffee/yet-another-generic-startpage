@@ -2,20 +2,22 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
 import { Section, Surface } from "../components"
+import { useGeneralSettings } from "../Providers"
 import { changelog } from "./data"
 
-const SettingsSurface = styled(Surface)`
-  ${({ theme: { space } }) => css`
+const SettingsSurface = styled(Surface)(({ theme: { space } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
     display: block;
     overflow-y: auto;
     max-height: calc(100vh - 6rem);
     padding: ${space.large};
 
     h2 {
-      font-size: 1rem;
+      font-size: ${fontSize}rem;
     }
-  `}
-`
+  `
+})
 
 export const Changelog = () => (
   <SettingsSurface>

@@ -4,6 +4,8 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Disclosure } from "@headlessui/react"
 import { ChevronDown, ChevronRight } from "react-feather"
+
+import { useGeneralSettings } from "../../../Providers"
 type DivButtonProps = Pick<HeaderButtonProps, "label"> & {
   className?: string
 }
@@ -20,8 +22,10 @@ const DivButton = ({
   />
 )
 
-const Button = styled(DivButton)`
-  ${({ theme: { color, space } }) => css`
+const Button = styled(DivButton)(({ theme: { color, space } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: ${fontSize}rem;
     width: 100%;
     height: 4rem;
 
@@ -41,8 +45,8 @@ const Button = styled(DivButton)`
       background: ${color.bg.highlight};
       outline: ${space.smallest} solid ${color.fg.shade};
     }
-  `}
-`
+  `
+})
 
 const CaretLayout = styled.span`
   ${({ theme: { space } }) => css`

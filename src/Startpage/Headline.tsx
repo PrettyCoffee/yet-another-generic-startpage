@@ -3,17 +3,18 @@ import styled from "@emotion/styled/macro"
 
 import { useGeneralSettings } from "../Providers"
 
-const H1 = styled.h1`
-  ${({ theme: { color, space } }) => css`
+const H1 = styled.h1(({ theme: { color, space } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
     color: ${color.primary.fg};
-    font-size: ${space.large};
+    font-size: calc(${fontSize} * ${space.large});
     font-weight: 500;
     margin: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
-  `}
-`
+  `
+})
 
 export const Headline = () => {
   const [{ title }] = useGeneralSettings()

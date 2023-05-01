@@ -1,8 +1,12 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-export const RowText = styled.div`
-  ${({ theme: { color, space } }) => css`
+import { useGeneralSettings } from "../../../Providers"
+
+export const RowText = styled.div(({ theme: { color, space } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: ${fontSize}rem;
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -19,5 +23,5 @@ export const RowText = styled.div`
       margin-left: ${space.medium};
       opacity: 0.5;
     }
-  `}
-`
+  `
+})

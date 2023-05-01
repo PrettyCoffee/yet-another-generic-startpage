@@ -10,15 +10,15 @@ const Title = styled.h2`
   `}
 `
 
-const Wrapper = styled.div`
-  ${({ theme: { space } }) => css`
+const Wrapper = styled.div(
+  ({ theme: { space } }) => css`
     margin-bottom: ${space.largest};
     margin-left: ${space.medium};
     :last-of-type {
       padding-bottom: 0;
     }
-  `}
-`
+  `
+)
 
 type SectionProps = {
   title: string

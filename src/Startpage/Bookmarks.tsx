@@ -2,6 +2,8 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { BookmarkGroup, useBookmarks } from "@startpage/bookmarks"
 
+import { useGeneralSettings } from "../Providers"
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -14,14 +16,15 @@ const GroupWrapper = styled.div<Pick<GroupProps, "count">>`
     width: calc(100% / ${count});
   `}
 `
-const Title = styled.h2`
-  ${({ theme: { color, space } }) => css`
+const Title = styled.h2(({ theme: { color } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
     color: ${color.secondary.fg};
-    font-size: ${space.medium};
+    font-size: ${fontSize}rem;
     font-weight: 500;
     margin: 0;
-  `}
-`
+  `
+})
 const LinkGroup = styled.ul`
   ${({ theme: { space } }) => css`
     margin: 0;

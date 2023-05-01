@@ -3,20 +3,23 @@ import { PropsWithChildren } from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
+import { useGeneralSettings } from "../Providers"
+
 const LabelWrapper = styled.label`
   height: fit-content;
 `
 
-const LabelText = styled.span<LabelProps>`
-  ${({ theme: { color }, invalid }) => css`
+const LabelText = styled.span<LabelProps>(({ theme: { color }, invalid }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: calc(${fontSize} * 0.75rem);
     display: block;
-    font-size: 0.75rem;
     ${invalid &&
     css`
       color: ${color.palette.red};
     `}
-  `}
-`
+  `
+})
 
 export type LabelProps = {
   label?: string

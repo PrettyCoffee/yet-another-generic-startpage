@@ -1,25 +1,30 @@
 import { PropsWithChildren } from "react"
 
+import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import {
   ErrorBoundary as ReactErrorBoundary,
   FallbackProps,
 } from "react-error-boundary"
 
+import { useGeneralSettings } from "./Providers"
 import { storagePrefix } from "./Providers/Providers"
 
 const Wrapper = styled.div`
   width: 100vw;
   font-family: sans-serif;
 `
-const Description = styled.div`
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`
+const Description = styled.div(() => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: calc(${fontSize} * 1.1rem);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  `
+})
 const Button = styled.button`
   margin: 0.5rem;
 `

@@ -1,7 +1,16 @@
-import { Section, Switch, TextInput } from "../components"
+import styled from "@emotion/styled"
+
+import { Section, Slider, Switch, TextInput } from "../components"
 import { ImageInput } from "../components/TextInputs/ImageInput"
 import { useGeneralSettings } from "../Providers"
 import { Note } from "./fragments/Note"
+
+const FlexRow = styled.div`
+  display: flex;
+  > label {
+    flex: 1;
+  }
+`
 
 export const General = () => {
   const [generalSettings, setGeneralSettings] = useGeneralSettings()
@@ -20,6 +29,9 @@ export const General = () => {
 
   const setEnableFonts = (enableFonts: boolean) =>
     setGeneralSettings({ ...generalSettings, enableFonts })
+
+  const setFontSize = (fontSize: number) =>
+    setGeneralSettings({ ...generalSettings, fontSize })
 
   return (
     <Section title="General">
@@ -40,9 +52,22 @@ export const General = () => {
       />
       <br />
       <br />
-      <TextInput label="Font" value={generalSettings.font} onChange={setFont} />
-      <br />
-      <br />
+      <FlexRow>
+        <TextInput
+          label="Font"
+          value={generalSettings.font}
+          onChange={setFont}
+        />
+        <Slider
+          label="Font size"
+          value={generalSettings.fontSize}
+          onChange={setFontSize}
+          min={0.5}
+          max={2}
+          getValueText={value => `font-size: ${value}rem`}
+          step={0.1}
+        />
+      </FlexRow>
       <Switch
         checked={generalSettings.enableFonts}
         onChange={setEnableFonts}

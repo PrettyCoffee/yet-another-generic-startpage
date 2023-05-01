@@ -3,8 +3,12 @@ import { PropsWithChildren } from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-const NativeButton = styled.button`
-  ${({ theme: { space, color } }) => css`
+import { useGeneralSettings } from "../Providers"
+
+const NativeButton = styled.button(({ theme: { space, color } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: ${fontSize}rem;
     height: calc(${space.medium} * 2);
     padding: 0 ${space.medium};
 
@@ -39,8 +43,8 @@ const NativeButton = styled.button`
       color: ${color.fg.shade};
       border-color: ${color.fg.shade};
     }
-  `}
-`
+  `
+})
 
 type ButtonProps = {
   onClick?: () => void

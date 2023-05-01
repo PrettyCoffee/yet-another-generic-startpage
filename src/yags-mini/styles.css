@@ -35,6 +35,7 @@ body {
   
   font-family: var(--font-family), sans-serif;
   font-weight: 500;
+  font-size: calc(var(--font-size) * var(--space-medium));
   background-color: var(--color-bg-base);
 }
 
@@ -96,7 +97,7 @@ body {
 
 .surface > main > h1 {
   color: var(--color-primary-fg);
-  font-size: var(--space-large);
+  font-size: calc(var(--font-size) * var(--space-large));
   font-weight: 500;
   margin: 0 0 var(--space-large) 0;
 
@@ -175,7 +176,7 @@ body {
 
 .bookmark-group > h2 {
   color: var(--color-secondary-fg);
-  font-size: var(--space-medium);
+  font-size: calc(var(--font-size) * var(--space-medium));
   font-weight: 500;
   margin: 0;
 }

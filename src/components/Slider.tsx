@@ -2,6 +2,7 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Theme } from "@startpage/theming"
 
+import { useGeneralSettings } from "../Providers"
 import { Label } from "./Label"
 
 const trackStyles = ({ color, space }: Theme) => css`
@@ -39,10 +40,13 @@ const Wrapper = styled.div`
   `}
 `
 
-const ValueText = styled.div`
-  text-align: center;
-  font-size: 0.75rem;
-`
+const ValueText = styled.div(() => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    text-align: center;
+    font-size: calc(${fontSize} * 0.75rem);
+  `
+})
 
 const SliderInput = styled.input`
   ${({ theme }) => css`

@@ -38,7 +38,7 @@ export const useMiniCssVars = () => {
     theme: { color, space },
   } = useTheme()
   const [{ maxWidth, shadow, borderRadius }] = useSurfaceSettings()
-  const [{ displayImg, font }] = useGeneralSettings()
+  const [{ displayImg, font, fontSize }] = useGeneralSettings()
   const { bookmarkGroups } = useBookmarks()
 
   const colorVars = getCssVarsFromObject({ color }, ["name", "palette"])
@@ -52,7 +52,8 @@ export const useMiniCssVars = () => {
     maxWidth: maxWidth + "px",
     borderRadius: borderRadius + "px",
     shadow: shadow.shadow,
-    font: font,
+    fontSize: String(fontSize),
+    font,
     displayImage: displayImg ? "block" : "none",
     groupCount: String(bookmarkGroups.length),
   })

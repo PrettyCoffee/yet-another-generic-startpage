@@ -4,10 +4,13 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Listbox } from "@headlessui/react"
 
-const StyledOption = styled.span`
-  ${({ theme: { color, space } }) => css`
+import { useGeneralSettings } from "../../../Providers"
+
+const StyledOption = styled.span(({ theme: { color, space } }) => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
     > li {
-      font-size: ${space.medium};
+      font-size: calc(${fontSize} * ${space.medium});
       list-style: none;
       cursor: pointer;
       padding: calc(${space.smallest} * 2);
@@ -21,8 +24,8 @@ const StyledOption = styled.span`
         background-color: ${color.bg.highlight};
       }
     }
-  `}
-`
+  `
+})
 
 type GetClassesArgs = {
   active: boolean

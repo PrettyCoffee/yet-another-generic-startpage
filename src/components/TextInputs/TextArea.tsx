@@ -1,34 +1,39 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
+import { useGeneralSettings } from "../../Providers"
 import { Label, LabelProps } from "../Label"
 
-const Area = styled.textarea<Pick<TextAreaProps, "invalid">>`
-  ${({ theme: { color, space }, invalid }) => css`
-    height: calc(${space.medium} * 12);
-    width: 100%;
+const Area = styled.textarea<Pick<TextAreaProps, "invalid">>(
+  ({ theme: { color, space }, invalid }) => {
+    const [{ fontSize }] = useGeneralSettings()
+    return css`
+      font-size: ${fontSize}rem;
+      height: calc(${space.medium} * 12);
+      width: 100%;
 
-    color: ${color.fg.surface};
-    background-color: transparent;
+      color: ${color.fg.surface};
+      background-color: transparent;
 
-    border: none;
-    outline: none;
-    border: ${space.smallest} solid ${color.fg.base};
-    resize: vertical;
+      border: none;
+      outline: none;
+      border: ${space.smallest} solid ${color.fg.base};
+      resize: vertical;
 
-    :focus-visible {
-      border-color: ${color.primary.base};
-    }
-
-    ${invalid &&
-    css`
-      &,
       :focus-visible {
-        border-color: ${color.palette.red};
+        border-color: ${color.primary.base};
       }
-    `}
-  `}
-`
+
+      ${invalid &&
+      css`
+        &,
+        :focus-visible {
+          border-color: ${color.palette.red};
+        }
+      `}
+    `
+  }
+)
 
 export type TextAreaProps = LabelProps & {
   placeholder?: string

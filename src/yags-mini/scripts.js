@@ -8,8 +8,8 @@
 const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
-const lookup = $searchLookup
-const engine = "$searchEngine"
+const lookup = $searchLookup$
+const engine = "$searchEngine$"
 const engineUrls = {
   deepl: "https://www.deepl.com/translator#-/-/",
   duckduckgo: "https://duckduckgo.com/?q=",
@@ -47,7 +47,7 @@ searchButton.onclick = search
  * inject bookmarks into html
  */
 
-const bookmarks = $bookmarks
+const bookmarks = $bookmarks$
 
 const createGroupContainer = () => {
   const container = document.createElement("div")

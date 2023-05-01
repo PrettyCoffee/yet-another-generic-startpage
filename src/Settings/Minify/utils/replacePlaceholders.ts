@@ -4,7 +4,7 @@ export const replacePlaceholders = (
 ) => {
   let copy = rawFile
   Object.keys(lookup).forEach(
-    key => (copy = copy.replaceAll("$" + key, lookup[key]))
+    key => (copy = copy.replaceAll(`$${key}$`, lookup[key]))
   )
   return copy
 }

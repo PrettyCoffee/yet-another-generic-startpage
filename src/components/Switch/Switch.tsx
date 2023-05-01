@@ -1,16 +1,24 @@
+import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
+import { useGeneralSettings } from "../../Providers"
 import { SwitchButton, Knob, Track } from "./fragments"
 
-const Label = styled.label`
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  height: 2rem;
-`
+const Label = styled.label(() => {
+  const [{ fontSize }] = useGeneralSettings()
+  return css`
+    font-size: ${fontSize}rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    height: 2rem;
+  `
+})
 
-const LabelText = styled.span``
+const LabelText = styled.span(() => {
+  return css``
+})
 
 export interface CheckedProp {
   checked: boolean
