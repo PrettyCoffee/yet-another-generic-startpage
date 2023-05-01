@@ -39,7 +39,7 @@ const Layout = styled.div`
 const changelogHash = "#changelog"
 
 const StartpageContent = () => (
-  <ContentSwitch leftContent={Startpage} rightContent={Settings} />
+  <ContentSwitch leftContent={<Startpage />} rightContent={<Settings />} />
 )
 
 const routes: HashRoutes = {

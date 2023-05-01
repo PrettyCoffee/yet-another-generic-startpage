@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import { ReactNode, useState } from "react"
 
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
@@ -40,8 +40,8 @@ const ButtonPosition = styled.div`
 `
 
 type SurfaceSwitchProps = {
-  leftContent: FC
-  rightContent: FC
+  leftContent: ReactNode
+  rightContent: ReactNode
 }
 
 export const ContentSwitch = ({
