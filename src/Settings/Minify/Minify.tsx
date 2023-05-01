@@ -2,6 +2,7 @@ import JSZip from "jszip"
 
 import { Button, Section } from "../../components"
 import { useCustomCss } from "../../Providers/CustomCss"
+import { Note } from "../fragments/Note"
 import {
   getMiniYagsFile,
   useMiniCssVars,
@@ -52,6 +53,12 @@ export const Minify = () => {
       <br />
       <br />
       <Button onClick={download}>Zip me a copy!</Button>
+      <Note>
+        Your custom styles may break due to major differences in the HTML
+        structure. That being said, they are included in the
+        <mark> "custom-styles.css" </mark>
+        file and should be fixable by adapting the <mark>css selectors</mark>.
+      </Note>
     </Section>
   )
 }
