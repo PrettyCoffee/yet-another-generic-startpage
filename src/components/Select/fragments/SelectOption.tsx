@@ -4,10 +4,10 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Listbox } from "@headlessui/react"
 
-import { useGeneralSettings } from "../../../Providers"
+import { useFontSize } from "../../../Providers"
 
 const StyledOption = styled.span(({ theme: { color, space } }) => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     > li {
       font-size: calc(${fontSize} * ${space.medium});

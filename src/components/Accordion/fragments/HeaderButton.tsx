@@ -5,7 +5,7 @@ import styled from "@emotion/styled/macro"
 import { Disclosure } from "@headlessui/react"
 import { ChevronDown, ChevronRight } from "react-feather"
 
-import { useGeneralSettings } from "../../../Providers"
+import { useFontSize } from "../../../Providers"
 type DivButtonProps = Pick<HeaderButtonProps, "label"> & {
   className?: string
 }
@@ -23,7 +23,7 @@ const DivButton = ({
 )
 
 const Button = styled(DivButton)(({ theme: { color, space } }) => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     font-size: ${fontSize}rem;
     width: 100%;

@@ -2,7 +2,7 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { Theme } from "@startpage/theming"
 
-import { useGeneralSettings } from "../Providers"
+import { useFontSize } from "../Providers"
 import { Label } from "./Label"
 
 const trackStyles = ({ color, space }: Theme) => css`
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
 `
 
 const ValueText = styled.div(() => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     text-align: center;
     font-size: calc(${fontSize} * 0.75rem);

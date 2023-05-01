@@ -1,11 +1,11 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useGeneralSettings } from "../../Providers"
+import { useFontSize } from "../../Providers"
 import { SwitchButton, Knob, Track } from "./fragments"
 
 const Label = styled.label(() => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     font-size: ${fontSize}rem;
     cursor: pointer;

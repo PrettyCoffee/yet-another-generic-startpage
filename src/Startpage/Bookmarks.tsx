@@ -2,7 +2,7 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 import { BookmarkGroup, useBookmarks } from "@startpage/bookmarks"
 
-import { useGeneralSettings } from "../Providers"
+import { useFontSize } from "../Providers"
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const GroupWrapper = styled.div<Pick<GroupProps, "count">>`
   `}
 `
 const Title = styled.h2(({ theme: { color } }) => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     color: ${color.secondary.fg};
     font-size: ${fontSize}rem;

@@ -4,9 +4,10 @@ import styled from "@emotion/styled/macro"
 import { Section, Surface } from "../components"
 import { useGeneralSettings } from "../Providers"
 import { changelog } from "./data"
+import { useFontSize } from "../Providers/GeneralSettings"
 
 const SettingsSurface = styled(Surface)(({ theme: { space } }) => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     display: block;
     overflow-y: auto;

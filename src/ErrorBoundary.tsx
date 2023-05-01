@@ -7,7 +7,7 @@ import {
   FallbackProps,
 } from "react-error-boundary"
 
-import { useGeneralSettings } from "./Providers"
+import { useFontSize } from "./Providers/GeneralSettings"
 import { storagePrefix } from "./Providers/Providers"
 
 const Wrapper = styled.div`
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   font-family: sans-serif;
 `
 const Description = styled.div(() => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     font-size: calc(${fontSize} * 1.1rem);
     margin-bottom: 3rem;

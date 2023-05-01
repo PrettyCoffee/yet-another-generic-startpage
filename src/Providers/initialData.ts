@@ -18,7 +18,7 @@ export const initialGeneralSettings = {
   displayImg: true,
   font: "Quicksand",
   enableFonts: false,
-  fontSize: 0,
+  fontSize: 1,
 }
 
 export const initialTheme = getTheme("nord")

@@ -1,10 +1,10 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useGeneralSettings } from "../Providers"
+import { useFontSize, useGeneralSettings } from "../Providers"
 
 const H1 = styled.h1(({ theme: { color, space } }) => {
-  const [{ fontSize }] = useGeneralSettings()
+  const fontSize = useFontSize()
   return css`
     color: ${color.primary.fg};
     font-size: calc(${fontSize} * ${space.large});

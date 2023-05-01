@@ -1,12 +1,12 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useGeneralSettings } from "../../Providers"
+import { useFontSize } from "../../Providers"
 import { Label, LabelProps } from "../Label"
 
 const Area = styled.textarea<Pick<TextAreaProps, "invalid">>(
   ({ theme: { color, space }, invalid }) => {
-    const [{ fontSize }] = useGeneralSettings()
+    const fontSize = useFontSize()
     return css`
       font-size: ${fontSize}rem;
       height: calc(${space.medium} * 12);

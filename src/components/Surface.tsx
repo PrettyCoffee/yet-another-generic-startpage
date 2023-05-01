@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled/macro"
 
-import { useGeneralSettings, useSurfaceSettings } from "../Providers"
+import { useFontSize, useSurfaceSettings } from "../Providers"
 
 type ContainerProps = {
   shadow: string
@@ -13,7 +13,7 @@ type ContainerProps = {
 
 export const Container = styled.div<ContainerProps>(
   ({ theme: { color, space }, shadow, borderRadius, maxWidth }) => {
-    const [{ fontSize }] = useGeneralSettings()
+    const fontSize = useFontSize()
     return css`
       font-size: ${fontSize}rem;
       width: calc(100% - 6rem);
