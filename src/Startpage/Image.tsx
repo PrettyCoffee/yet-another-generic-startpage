@@ -14,7 +14,7 @@ const Img = styled.img`
 
 export const Image = () => {
   const [{ img, displayImg }] = useGeneralSettings()
-  const [src, setSrc] = useState("")
+  const [src, setSrc] = useState(img)
 
   useEffect(() => setSrc(img), [img])
 

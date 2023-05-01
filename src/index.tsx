@@ -1,21 +1,23 @@
 import React from "react"
 
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
 
 import App from "./App"
 import { ErrorBoundary } from "./ErrorBoundary"
 import { Providers } from "./Providers"
 import reportWebVitals from "./reportWebVitals"
 
-ReactDOM.render(
+const root = document.getElementById("root")
+if (!root) throw new Error("Root node could not be found (react-dom)")
+
+createRoot(root).render(
   <React.StrictMode>
     <ErrorBoundary>
       <Providers>
         <App />
       </Providers>
     </ErrorBoundary>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
