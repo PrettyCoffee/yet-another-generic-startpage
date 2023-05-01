@@ -7,6 +7,14 @@ export type Changelog = {
 
 export const changelog: Changelog = sortChangelogDesc([
   {
+    version: "v1.3.0",
+    changes: [
+      "added custom styles",
+      "added font size slider",
+      "improved repo readme",
+    ],
+  },
+  {
     version: "v1.2.0",
     changes: ["added Mini YAGS export (settings -> Mini-YAGS)"],
   },
