@@ -11,12 +11,12 @@ const searchButton = document.querySelector("#searchbar > button")
 const lookup = $searchLookup$
 const engine = "$searchEngine$"
 const engineUrls = {
-  deepl: "https://www.deepl.com/translator#-/-/",
-  duckduckgo: "https://duckduckgo.com/?q=",
-  ecosia: "https://www.ecosia.org/search?q=",
-  google: "https://www.google.com/search?q=",
-  startpage: "https://www.startpage.com/search?q=",
-  youtube: "https://www.youtube.com/results?q=",
+  deepl: "https://www.deepl.com/translator#-/-/{query}",
+  duckduckgo: "https://duckduckgo.com/?q={query}",
+  ecosia: "https://www.ecosia.org/search?q={query}",
+  google: "https://www.google.com/search?q={query}",
+  startpage: "https://www.startpage.com/search?q={query}",
+  youtube: "https://www.youtube.com/results?q={query}",
 }
 
 const isWebUrl = value => {
@@ -31,7 +31,8 @@ const isWebUrl = value => {
 const getTargetUrl = value => {
   if (isWebUrl(value)) return value
   if (lookup[value]) return lookup[value]
-  return engineUrls[engine] + value
+  const url = engineUrls[engine] ?? engine
+  return url.replace("{query}", value)
 }
 
 const search = () => {
