@@ -38,14 +38,14 @@ const HeaderButton = styled(Listbox.Button)<Pick<SelectHeaderProps, "open">>`
   `}
 `
 
-const HeaderText = styled.span(
-  ({ theme: { color }, placeholder }) => css`
+const HeaderText = styled.span<{ isPlaceholder: boolean }>(
+  ({ theme: { color }, isPlaceholder }) => css`
     flex: 1;
     text-align: left;
     overflow-x: hidden;
     text-overflow: ellipsis;
 
-    ${Boolean(placeholder) &&
+    ${isPlaceholder &&
     css`
       color: ${color.fg.shade};
     `}
@@ -54,12 +54,19 @@ const HeaderText = styled.span(
 
 export type SelectHeaderProps = {
   label?: string
+  placeholder?: string
   open: boolean
 }
 
-export const SelectHeader = ({ label, open }: SelectHeaderProps) => (
+export const SelectHeader = ({
+  label,
+  open,
+  placeholder,
+}: SelectHeaderProps) => (
   <HeaderButton open={open}>
-    <HeaderText>{label}</HeaderText>
+    <HeaderText isPlaceholder={!!placeholder && !label}>
+      {label ?? placeholder}
+    </HeaderText>
     {open ? <ChevronUp /> : <ChevronDown />}
   </HeaderButton>
 )

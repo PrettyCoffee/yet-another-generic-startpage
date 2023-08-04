@@ -31,7 +31,8 @@ export const Select = ({
           {({ open }) => (
             <>
               <SelectHeader
-                label={currentOption?.label || placeholder}
+                placeholder={placeholder}
+                label={currentOption?.label}
                 open={open}
               />
               <SelectOptions options={options} />

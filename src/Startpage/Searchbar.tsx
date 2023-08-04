@@ -5,8 +5,9 @@ import { useBookmarks } from "@startpage/bookmarks"
 import { performSearch } from "@startpage/search"
 import { Search } from "react-feather"
 
-import { IconButton, TextInput } from "../components"
+import { IconButton, TextInput, isWebUrl } from "../components"
 import { useSearchSettings } from "../Providers"
+import { searchEngines } from "../Settings/Search/fragments/SearchEngine"
 
 const Layout = styled.div`
   display: flex;
@@ -32,11 +33,28 @@ export const Searchbar = () => {
     return lookup
   }, [bookmarkGroups])
 
-  const handleSearch = () =>
+  const performSearchWithCustomEngine = () => {
+    const lookup = { ...bookmarkLookup, ...forwardingLookup }
+    const link =
+      isWebUrl(value) || lookup[value]
+        ? value
+        : engine.replace("{query}", value)
+    performSearch(link, "startpage", {
+      directLink: true,
+      forwardingLookup: lookup,
+    })
+  }
+
+  const performDefaultSearch = () =>
     performSearch(value, engine, {
       directLink: true,
       forwardingLookup: { ...bookmarkLookup, ...forwardingLookup },
     })
+
+  const handleSearch = () =>
+    searchEngines.includes(engine)
+      ? performDefaultSearch()
+      : performSearchWithCustomEngine()
 
   return (
     <Layout>
