@@ -2,10 +2,10 @@ import { useState } from "react"
 
 import { Save, X } from "react-feather"
 
-import { IconButton, TextInput } from "../../../../components"
 import { TitleLayout } from "./TitleLayout"
+import { IconButton, TextInput } from "../../../../components"
 
-type EditModeProps = {
+interface EditModeProps {
   label: string
   onSave: (label: string) => void
   onAbort: () => void

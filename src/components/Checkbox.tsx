@@ -52,7 +52,7 @@ const Box = styled.span`
 
 const LabelText = styled.span``
 
-type CheckboxProps = {
+interface CheckboxProps {
   checked: boolean
   onChange?: (checked: boolean) => void
   label: string
@@ -60,7 +60,7 @@ type CheckboxProps = {
 
 export const Checkbox = ({ checked, onChange, label }: CheckboxProps) => {
   const handleChange = () => onChange?.(!checked)
-  const handleKeyPress = (key: string) => key === " " && handleChange()
+  const handleKeyDown = (key: string) => key === " " && handleChange()
 
   return (
     <Label onClick={handleChange}>
@@ -68,7 +68,7 @@ export const Checkbox = ({ checked, onChange, label }: CheckboxProps) => {
         role="checkbox"
         aria-checked={checked}
         tabIndex={0}
-        onKeyPress={event => handleKeyPress(event.key)}
+        onKeyDown={event => handleKeyDown(event.key)}
       >
         <Check />
       </Box>

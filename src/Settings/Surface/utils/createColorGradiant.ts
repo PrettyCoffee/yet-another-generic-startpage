@@ -1,12 +1,12 @@
 import Color from "color"
 
-type RGB = {
+interface RGB {
   r: number
   g: number
   b: number
 }
 
-const getRgbValues = (color: string) => Color(color).object() as RGB
+const getRgbValues = (color: string) => Color(color).object() as unknown as RGB
 
 const calcStep = (start: number, end: number, steps: number, step: number) => {
   if (start >= end) {

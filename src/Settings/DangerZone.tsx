@@ -6,7 +6,7 @@ import { useStoragePrefix } from "@startpage/local-storage"
 
 import { Button, Section, TextInput } from "../components"
 
-type DangerFieldProps = {
+interface DangerFieldProps {
   label: string
   expected: string
   onButtonClick: () => void

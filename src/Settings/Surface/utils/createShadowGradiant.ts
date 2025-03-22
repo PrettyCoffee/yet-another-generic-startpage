@@ -3,7 +3,7 @@ import { createColorGradiant } from "./createColorGradiant"
 const getShadow = (offset: number, blur: number, color: string) =>
   `${offset}px ${offset}px ${blur}px ${color}`
 
-export type ShadowParameters = {
+export interface ShadowParameters {
   amount: number
   blur: number
   offset: number

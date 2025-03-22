@@ -41,12 +41,12 @@ export type TextInputProps = LabelProps & {
   autoFocus?: boolean
   invalid?: boolean
   onChange?: (value: string) => void
-  onKeyPress?: (key: string) => void
+  onKeyDown?: (key: string) => void
 }
 
 export const TextInput = ({
   onChange,
-  onKeyPress,
+  onKeyDown,
   label,
   invalid,
   ...delegated
@@ -57,7 +57,7 @@ export const TextInput = ({
       invalid={invalid}
       onClick={click => click.stopPropagation()}
       onChange={event => onChange?.(event.currentTarget.value)}
-      onKeyPress={event => onKeyPress?.(event.key)}
+      onKeyDown={event => onKeyDown?.(event.key)}
       {...delegated}
     />
   )

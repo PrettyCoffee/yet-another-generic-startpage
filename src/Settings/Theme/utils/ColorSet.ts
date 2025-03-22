@@ -6,7 +6,7 @@ export type ColorSet = BaseColors & {
   inverted: boolean
 }
 
-export type ColorSetStateProps = {
+export interface ColorSetStateProps {
   colors: ColorSet
   updateColors: (colors: ColorSet) => void
 }

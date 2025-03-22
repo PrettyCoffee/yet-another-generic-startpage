@@ -1,26 +1,27 @@
 import { useBookmarks } from "@startpage/bookmarks"
 import { useTheme } from "@startpage/theming"
 
-import { useGeneralSettings, useSurfaceSettings } from "../../../Providers"
-import { replacePlaceholders } from "./replacePlaceholders"
 import { rawCssVars } from "./rawFiles"
+import { replacePlaceholders } from "./replacePlaceholders"
+import { useGeneralSettings, useSurfaceSettings } from "../../../Providers"
 
-const objectToString = (object: any) => {
+const objectToString = (object: Record<string, unknown>) => {
   const vars: string[] = []
   Object.keys(object).forEach(key => {
-    if (typeof object[key] === "object") {
-      objectToString(object[key]).forEach(path => {
+    const value = object[key]
+    if (value && typeof value === "object") {
+      objectToString(value as Record<string, unknown>).forEach(path => {
         vars.push(`${key}-${path}`)
       })
     } else {
-      vars.push(key + `: ${object[key]};`)
+      vars.push(key + `: ${value};`)
     }
   })
   return vars
 }
 
-const getCssVarsFromObject = <T extends Record<string, unknown>>(
-  object: T,
+const getCssVarsFromObject = (
+  object: Record<string, unknown>,
   excludedKeys: string[]
 ) => {
   const copy = { ...object }
@@ -45,8 +46,8 @@ export const useMiniCssVars = () => {
   return replacePlaceholders(rawCssVars, {
     colors: colorVars,
     spacing: spaceVars,
-    maxWidth: maxWidth + "px",
-    borderRadius: borderRadius + "px",
+    maxWidth: String(maxWidth) + "px",
+    borderRadius: String(borderRadius) + "px",
     shadow: shadow.shadow,
     fontSize: String(fontSize),
     font,

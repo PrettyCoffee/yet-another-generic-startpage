@@ -6,6 +6,7 @@ import { Disclosure } from "@headlessui/react"
 import { ChevronDown, ChevronRight } from "react-feather"
 
 import { useFontSize } from "../../../Providers"
+
 type DivButtonProps = Pick<HeaderButtonProps, "label"> & {
   className?: string
 }
@@ -57,7 +58,7 @@ const CaretLayout = styled.span`
   `}
 `
 
-type HeaderButtonProps = {
+interface HeaderButtonProps {
   open: boolean
   label?: string
 }

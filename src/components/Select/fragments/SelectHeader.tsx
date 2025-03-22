@@ -52,7 +52,7 @@ const HeaderText = styled.span<{ isPlaceholder: boolean }>(
   `
 )
 
-export type SelectHeaderProps = {
+export interface SelectHeaderProps {
   label?: string
   placeholder?: string
   open: boolean

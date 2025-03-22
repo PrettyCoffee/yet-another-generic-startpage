@@ -46,7 +46,7 @@ const NativeButton = styled.button(({ theme: { space, color } }) => {
   `
 })
 
-type ButtonProps = {
+interface ButtonProps {
   onClick?: () => void
   disabled?: boolean
 }

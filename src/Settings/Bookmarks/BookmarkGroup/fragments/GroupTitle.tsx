@@ -1,10 +1,10 @@
 import { useBookmarks } from "@startpage/bookmarks"
 
-import { useEditMode } from "../../fragments/EditModeContext"
 import { EditMode } from "./EditMode"
 import { ViewMode } from "./ViewMode"
+import { useEditMode } from "../../fragments/EditModeContext"
 
-export type GroupTitleProps = {
+export interface GroupTitleProps {
   id: string
   label: string
   bookmarkCount: number

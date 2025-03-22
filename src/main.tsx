@@ -1,20 +1,9 @@
-import React, { useEffect } from "react"
-
+import React from "react"
 import { createRoot } from "react-dom/client"
 
 import App from "./App"
 import { ErrorBoundary } from "./ErrorBoundary"
-import { Providers, useGeneralSettings } from "./Providers"
-
-const MigrationFix = () => {
-  const [generalSettings, setGeneralSettings] = useGeneralSettings()
-  useEffect(() => {
-    // v1.2.0 -> 1.3.0
-    if (generalSettings.fontSize == null)
-      setGeneralSettings({ ...generalSettings, fontSize: 1 })
-  }, [])
-  return <></>
-}
+import { Providers } from "./Providers"
 
 const root = document.getElementById("root")
 if (!root) throw new Error("Root node could not be found (react-dom)")
@@ -23,7 +12,6 @@ createRoot(root).render(
   <React.StrictMode>
     <ErrorBoundary>
       <Providers>
-        <MigrationFix />
         <App />
       </Providers>
     </ErrorBoundary>

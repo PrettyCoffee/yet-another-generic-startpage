@@ -21,7 +21,7 @@ const LabelText = styled.span<LabelProps>(({ theme: { color }, invalid }) => {
   `
 })
 
-export type LabelProps = {
+export interface LabelProps {
   label?: string
   invalid?: boolean
 }

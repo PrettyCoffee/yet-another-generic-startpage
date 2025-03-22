@@ -25,7 +25,7 @@ const isImage = (url: string, timeout = 5000): Promise<boolean> =>
     image.src = url
   })
 
-type ImageInputProps = {
+interface ImageInputProps {
   label: string
   value: string
   onChange: (value: string) => void

@@ -73,7 +73,7 @@ export const Bookmarks = () => {
     <Wrapper>
       {bookmarkGroups.map((group, index) => (
         <Group
-          key={group.label + index}
+          key={group.label + index.toString()}
           count={bookmarkGroups.length}
           {...group}
         />

@@ -1,15 +1,9 @@
 import JSZip from "jszip"
 
+import { useMiniCssVars, useMiniHtml, useMiniJs, downloadBlob } from "./utils"
 import { Button, Section } from "../../components"
 import { useCustomCss } from "../../Providers/CustomCss"
 import { Note } from "../fragments/Note"
-import {
-  useMiniCssVars,
-  useMiniHtml,
-  useMiniJs,
-  downloadBlob,
-} from "./utils"
-
 import { rawStyles, rawFavicon } from "./utils/rawFiles"
 
 export const Minify = () => {
@@ -18,7 +12,7 @@ export const Minify = () => {
   const miniJs = useMiniJs()
   const miniCssVars = useMiniCssVars()
 
-  const download = async () => {
+  const download = () => {
     const zip = new JSZip()
     zip.file("index.html", miniHtml)
     zip.file("scripts.js", miniJs)
@@ -27,7 +21,7 @@ export const Minify = () => {
     zip.file("styles.css", rawStyles)
     zip.file("favicon.ico", rawFavicon)
 
-    zip
+    return zip
       .generateAsync({ type: "blob" })
       .then(blob => downloadBlob(URL.createObjectURL(blob), "mini-yags.zip"))
   }
@@ -51,7 +45,7 @@ export const Minify = () => {
       just want to have it locally.
       <br />
       <br />
-      <Button onClick={download}>Zip me a copy!</Button>
+      <Button onClick={void download}>Zip me a copy!</Button>
       <Note>
         Your custom styles may break due to major differences in the HTML
         structure. That being said, they are included in the

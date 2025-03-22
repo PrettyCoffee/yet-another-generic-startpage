@@ -11,7 +11,7 @@ const defaultState: EditModeState = {
 
 const Context = createContext<EditModeState>(defaultState)
 
-export const EditModeProvider = ({ children }: PropsWithChildren<unknown>) => {
+export const EditModeProvider = ({ children }: PropsWithChildren) => {
   const [editElement, setEditElement] = useState<string>()
   return (
     <Context.Provider value={{ editElement, setEditElement }}>

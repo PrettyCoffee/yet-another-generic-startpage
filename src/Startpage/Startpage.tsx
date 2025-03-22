@@ -1,11 +1,11 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { Surface } from "../components/Surface"
 import { Bookmarks } from "./Bookmarks"
 import { Headline } from "./Headline"
 import { Image } from "./Image"
 import { Searchbar } from "./Searchbar"
+import { Surface } from "../components/Surface"
 
 const Content = styled.div`
   ${({ theme: { space } }) => css`

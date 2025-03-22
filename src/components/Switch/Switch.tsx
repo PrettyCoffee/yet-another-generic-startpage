@@ -1,8 +1,8 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
-import { useFontSize } from "../../Providers"
 import { SwitchButton, Knob, Track } from "./fragments"
+import { useFontSize } from "../../Providers"
 
 const Label = styled.label(() => {
   const fontSize = useFontSize()
@@ -24,7 +24,7 @@ export interface CheckedProp {
   checked: boolean
 }
 
-type SwitchProps = {
+interface SwitchProps {
   onChange?: (value: boolean) => void
   checked?: boolean
   label?: string

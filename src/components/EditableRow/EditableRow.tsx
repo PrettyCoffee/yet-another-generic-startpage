@@ -1,7 +1,7 @@
 import { ItemEditMode } from "./fragments/ItemEditMode"
 import { ItemViewMode } from "./fragments/ItemViewMode"
 
-export type RowElement = {
+export interface RowElement {
   label: string
   url: string
 }

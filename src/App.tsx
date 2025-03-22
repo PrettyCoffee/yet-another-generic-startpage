@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
@@ -50,10 +52,12 @@ const App = () => {
   const [version, setVersion] = useVersion()
   const urlHash = useUrlHash()
 
-  if (version !== latestVersion) {
-    setVersion(latestVersion)
-    window.location.hash = changelogHash
-  }
+  useEffect(() => {
+    if (version !== latestVersion) {
+      setVersion(latestVersion)
+      window.location.hash = changelogHash
+    }
+  }, [setVersion, version])
 
   const showChangelog = urlHash === changelogHash
   const linkProps = {

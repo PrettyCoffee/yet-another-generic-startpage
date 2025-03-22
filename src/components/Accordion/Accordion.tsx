@@ -1,11 +1,11 @@
-import { PropsWithChildren } from "react"
+import { PropsWithChildren, JSX } from "react"
 
 import { Disclosure } from "@headlessui/react"
 
 import { HeaderButton } from "./fragments/HeaderButton"
 import { Panel } from "./fragments/Panel"
 
-type AccordionProps = {
+interface AccordionProps {
   header: string | JSX.Element
   buttonLabel?: string
   defaultOpen?: boolean

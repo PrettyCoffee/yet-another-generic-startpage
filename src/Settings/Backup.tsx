@@ -31,7 +31,7 @@ export const Backup = () => {
   )
 
   const onImport = (file: File) => {
-    Backup.restore(file).then(valid => {
+    void Backup.restore(file).then(valid => {
       if (valid) window.location.reload()
       else setImportValid(false)
     })

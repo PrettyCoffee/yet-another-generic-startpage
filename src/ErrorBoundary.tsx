@@ -28,7 +28,7 @@ const Description = styled.div(() => {
 const Button = styled.button`
   margin: 0.5rem;
 `
-const Error = styled.blockquote`
+const ErrorText = styled.blockquote`
   padding: 1rem;
   border: red 2px solid;
 `
@@ -41,7 +41,7 @@ const getLSContent = () => {
   const result: Record<string, unknown> = {}
   prefixedKeys.map(key => {
     try {
-      result[key] = JSON.parse(localStorage[key])
+      result[key] = JSON.parse(localStorage.getItem(key) ?? "")
     } catch {
       result[key] = "PARSING ERROR: This item seems to be broken"
     }
@@ -51,7 +51,7 @@ const getLSContent = () => {
 
 const DeleteButtons = () => {
   const deleteKey = (key: string) => {
-    delete localStorage[key]
+    localStorage.removeItem(key)
     location.reload()
   }
 
@@ -63,7 +63,9 @@ const DeleteButtons = () => {
     <>
       <div>
         {prefixedKeys.map(key => (
-          <Button onClick={() => deleteKey(key)}>Delete {key}</Button>
+          <Button key={key} onClick={() => deleteKey(key)}>
+            Delete {key}
+          </Button>
         ))}
       </div>
       <Button onClick={resetLocalStorage}>Reset startpage entirely</Button>
@@ -75,9 +77,11 @@ const ErrorFallback = ({ error }: FallbackProps) => (
   <Wrapper>
     <Description>
       <h1>Oopsie!</h1>
-      <Error>
-        {error.name}: {error.message}
-      </Error>
+      <ErrorText>
+        {error instanceof Error
+          ? `${error.name}: ${error.message}`
+          : "Unknown error"}
+      </ErrorText>
       <p>
         Seems like something is broken :(
         <br />
@@ -97,7 +101,7 @@ const ErrorFallback = ({ error }: FallbackProps) => (
   </Wrapper>
 )
 
-export const ErrorBoundary = ({ children }: PropsWithChildren<unknown>) => (
+export const ErrorBoundary = ({ children }: PropsWithChildren) => (
   <ReactErrorBoundary FallbackComponent={ErrorFallback}>
     {children}
   </ReactErrorBoundary>

@@ -25,8 +25,8 @@ const findNewKey = (object: Record<string, string>) => {
   if (object[baseKey] === undefined) return baseKey
 
   let i = 0
-  while (object[baseKey + "-" + i] !== undefined) i++
-  return baseKey + "-" + i
+  while (object[baseKey + "-" + i.toString()] !== undefined) i++
+  return baseKey + "-" + i.toString()
 }
 
 export const SearchLookup = () => {
@@ -73,7 +73,7 @@ export const SearchLookup = () => {
     <>
       <Accordion header={header} buttonLabel="lookup accordion">
         {lookupKeys
-          .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
+          .toSorted((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
           .map(key => (
             <EditableRow
               key={key}

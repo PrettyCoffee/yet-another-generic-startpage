@@ -2,7 +2,6 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
 import { Section, Surface } from "../components"
-import { useGeneralSettings } from "../Providers"
 import { changelog } from "./data"
 import { useFontSize } from "../Providers/GeneralSettings"
 
@@ -26,8 +25,8 @@ export const Changelog = () => (
     {changelog.map(({ version, changes }) => (
       <Section title={version} key={version}>
         <ul>
-          {changes.map((change, index) => (
-            <li key={index}>{change}</li>
+          {changes.map(change => (
+            <li key={change}>{change}</li>
           ))}
         </ul>
       </Section>

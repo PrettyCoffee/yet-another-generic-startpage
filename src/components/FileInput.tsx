@@ -15,7 +15,7 @@ const HiddenFileInput = styled(VisuallyHidden)<{ type: "file" }>`
   outline: none;
 `
 
-type LabelProps = {
+interface LabelProps {
   valid?: boolean
   dragging: boolean
 }
@@ -60,7 +60,7 @@ const Label = styled.label<LabelProps>`
   `}
 `
 
-type FileInputProps = {
+interface FileInputProps {
   label?: string
   id?: string
   valid?: boolean

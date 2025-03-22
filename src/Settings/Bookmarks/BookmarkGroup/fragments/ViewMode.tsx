@@ -1,9 +1,9 @@
 import styled from "@emotion/styled"
 import { Plus, Edit3, Trash } from "react-feather"
 
-import { IconButton } from "../../../../components"
 import { GroupTitleProps } from "./GroupTitle"
 import { TitleLayout } from "./TitleLayout"
+import { IconButton } from "../../../../components"
 
 const GroupName = styled.h3`
   margin: 0;

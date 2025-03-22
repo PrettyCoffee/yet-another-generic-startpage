@@ -7,9 +7,9 @@ import { useCustomCss } from "./CustomCss"
 import { useGeneralSettings } from "./GeneralSettings"
 import { initialTheme } from "./initialData"
 
-const getGlobalStyles = (font?: string, enableFonts?: boolean) => {
+const getGlobalStyles = (font: string, enableFonts?: boolean) => {
   const fontBaseUrl =
-    "https://fonts.googleapis.com/css?family=" + font?.replace(" ", "+")
+    "https://fonts.googleapis.com/css?family=" + font.replace(" ", "+")
 
   return css`
     ${enableFonts &&
@@ -57,13 +57,13 @@ const getGlobalStyles = (font?: string, enableFonts?: boolean) => {
   `
 }
 
-export const ThemeProvider = ({ children }: PropsWithChildren<unknown>) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [customCss] = useCustomCss()
   const [{ font, enableFonts }] = useGeneralSettings()
   const globalStyles = getGlobalStyles(font, enableFonts)
 
   return (
-    <StpgTheme initialTheme={initialTheme} persistTheme={true}>
+    <StpgTheme initialTheme={initialTheme} persistTheme>
       <ThemeConsumer>
         {({ theme }) => (
           <EmotionTheme theme={theme}>

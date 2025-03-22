@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 
 import { useFontSize, useSurfaceSettings } from "../Providers"
 
-type ContainerProps = {
+interface ContainerProps {
   shadow: string
   borderRadius: number
   maxWidth: number
@@ -51,7 +51,7 @@ export const Container = styled.div<ContainerProps>(
   }
 )
 
-type SurfaceProps = {
+interface SurfaceProps {
   className?: string
 }
 

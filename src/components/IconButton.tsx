@@ -2,7 +2,7 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { Icon } from "react-feather"
 
-import { VisuallyHidden } from "."
+import { VisuallyHidden } from "./VisuallyHidden"
 
 const Button = styled.button`
   ${({ theme: { color, space } }) => css`
@@ -42,7 +42,7 @@ const Button = styled.button`
   `}
 `
 
-type IconButtonProps = {
+interface IconButtonProps {
   label?: string
   onClick?: () => void
   icon: Icon

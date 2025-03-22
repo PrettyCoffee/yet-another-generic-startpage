@@ -22,10 +22,9 @@ const thumbStyles = ({ color, space }: Theme) => css`
   border: none;
 `
 
-const trackFocusStyles = ({ color }: Theme) =>
-  css`
-    background-color: ${color.primary.fg};
-  `
+const trackFocusStyles = ({ color }: Theme) => css`
+  background-color: ${color.primary.fg};
+`
 
 const thumbFocusStyles = ({ color }: Theme) => css`
   outline: 2px solid ${color.primary.base};
@@ -96,7 +95,7 @@ const SliderInput = styled.input`
   `}
 `
 
-type SliderProps = {
+interface SliderProps {
   label: string
   value: number
   getValueText?: (value: number) => string

@@ -42,12 +42,12 @@ export type TextAreaProps = LabelProps & {
   autoFocus?: boolean
   invalid?: boolean
   onChange?: (value: string) => void
-  onKeyPress?: (key: string) => void
+  onKeyDown?: (key: string) => void
 }
 
 export const TextArea = ({
   onChange,
-  onKeyPress,
+  onKeyDown,
   label,
   invalid,
   ...delegated
@@ -57,7 +57,7 @@ export const TextArea = ({
       invalid={invalid}
       onClick={click => click.stopPropagation()}
       onChange={event => onChange?.(event.currentTarget.value)}
-      onKeyPress={event => onKeyPress?.(event.key)}
+      onKeyDown={event => onKeyDown?.(event.key)}
       {...delegated}
     />
   )

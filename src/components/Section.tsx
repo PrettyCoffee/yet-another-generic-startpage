@@ -20,7 +20,7 @@ const Wrapper = styled.div(
   `
 )
 
-type SectionProps = {
+interface SectionProps {
   title: string
 }
 

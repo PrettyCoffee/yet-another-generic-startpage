@@ -27,7 +27,7 @@ const StyledOption = styled.span(({ theme: { color, space } }) => {
   `
 })
 
-type GetClassesArgs = {
+interface GetClassesArgs {
   active: boolean
   selected: boolean
 }
@@ -38,7 +38,7 @@ const getOptionClasses = ({ active, selected }: GetClassesArgs) => {
   return classes.join(" ")
 }
 
-export type Option = {
+export interface Option {
   value: string
   label?: string
 }

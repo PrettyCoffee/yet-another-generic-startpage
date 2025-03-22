@@ -1,6 +1,6 @@
-import { useGeneralSettings, useSearchSettings } from "../../../Providers"
-import { replacePlaceholders } from "./replacePlaceholders"
 import { rawHtml } from "./rawFiles"
+import { replacePlaceholders } from "./replacePlaceholders"
+import { useGeneralSettings, useSearchSettings } from "../../../Providers"
 
 export const useMiniHtml = () => {
   const [{ img, title }] = useGeneralSettings()

@@ -3,9 +3,11 @@ import { useMemo } from "react"
 import { createColorScheme, getInvertedColorScheme } from "@startpage/preset"
 import { useTheme } from "@startpage/theming"
 
+import { ColorFields } from "./ColorFields"
+import { ColorPresets } from "./ColorPresets"
+import { InvertSwitch } from "./InvertSwitch"
 import { SpacedLayout } from "../../fragments/SpacedLayout"
 import { ColorSet, extractColorSetFromTheme } from "../utils/ColorSet"
-import { ColorFields, ColorPresets, InvertSwitch } from "./"
 
 export const AutoColoring = () => {
   const { theme, setTheme } = useTheme()

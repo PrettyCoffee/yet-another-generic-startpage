@@ -7,7 +7,7 @@ import { Option } from "./fragments/SelectOption"
 const getOptionByValue = (options: Option[], value?: string) =>
   options.find(option => option.value === value)
 
-export type SelectProps = {
+export interface SelectProps {
   options: Option[]
   value?: string
   placeholder?: string

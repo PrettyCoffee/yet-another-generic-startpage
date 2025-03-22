@@ -39,7 +39,7 @@ const ButtonPosition = styled.div`
   `}
 `
 
-type SurfaceSwitchProps = {
+interface SurfaceSwitchProps {
   leftContent: ReactNode
   rightContent: ReactNode
 }

@@ -34,7 +34,7 @@ const UrlPath = styled.span`
   `}
 `
 
-type UrlProps = {
+interface UrlProps {
   url: string
 }
 

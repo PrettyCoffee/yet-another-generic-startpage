@@ -1,8 +1,8 @@
 import { useBookmarks } from "@startpage/bookmarks"
 
-import { useSearchSettings } from "../../../Providers"
-import { replacePlaceholders } from "./replacePlaceholders"
 import { rawScripts } from "./rawFiles"
+import { replacePlaceholders } from "./replacePlaceholders"
+import { useSearchSettings } from "../../../Providers"
 
 export const useMiniJs = () => {
   const { bookmarkGroups } = useBookmarks()

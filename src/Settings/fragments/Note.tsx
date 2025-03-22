@@ -23,6 +23,6 @@ const Text = styled(CenterLayout)`
   `}
 `
 
-export const Note = ({ children }: PropsWithChildren<unknown>) => (
+export const Note = ({ children }: PropsWithChildren) => (
   <Text as="p">Note: {children}</Text>
 )

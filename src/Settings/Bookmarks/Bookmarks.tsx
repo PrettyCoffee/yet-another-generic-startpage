@@ -1,8 +1,8 @@
 import { useBookmarks } from "@startpage/bookmarks"
 import { Plus } from "react-feather"
 
-import { Button, Section } from "../../components"
 import { BookmarkGroup } from "./BookmarkGroup"
+import { Button, Section } from "../../components"
 import { EditModeProvider } from "./fragments/EditModeContext"
 
 export const Bookmarks = () => {
