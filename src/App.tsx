@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 
 import { Changelog } from "./Changelog/Changelog"
 import { latestVersion } from "./Changelog/data"

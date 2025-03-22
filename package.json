@@ -4,9 +4,11 @@
   "license": "MIT",
   "private": true,
   "homepage": ".",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "lint": "eslint ./src",
@@ -23,12 +25,10 @@
     "@startpage/theming": "^0.2.6",
     "color": "^4.2.3",
     "jszip": "^3.10.1",
-    "raw-loader": "^4.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-error-boundary": "^4.1.2",
-    "react-feather": "^2.0.10",
-    "web-vitals": "^3.5.2"
+    "react-feather": "^2.0.10"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.12.0",
@@ -36,6 +36,7 @@
     "@types/node": "^20.17.25",
     "@types/react": "^18.3.19",
     "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^8.10.0",
     "eslint-import-resolver-typescript": "^3.9.1",
@@ -45,8 +46,8 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "gh-pages": "^5.0.0",
     "prettier": "^2.8.8",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   },
   "browserslist": {
     "production": [

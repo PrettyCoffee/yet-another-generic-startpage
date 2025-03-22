@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { ColorGradient, GreyScale } from "@startpage/preset"
 import { useTheme } from "@startpage/theming"
 

@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react"
 
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { Transition } from "@headlessui/react"
 import { ChevronsLeft, ChevronsRight } from "react-feather"
 

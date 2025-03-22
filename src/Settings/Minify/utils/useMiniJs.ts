@@ -1,21 +1,16 @@
 import { useBookmarks } from "@startpage/bookmarks"
 
 import { useSearchSettings } from "../../../Providers"
-import { getMiniYagsFile } from "./getMiniYagsFile"
 import { replacePlaceholders } from "./replacePlaceholders"
-
-const getRawJs = () => getMiniYagsFile("scripts.js")
+import { rawScripts } from "./rawFiles"
 
 export const useMiniJs = () => {
   const { bookmarkGroups } = useBookmarks()
   const [{ forwardingLookup, engine }] = useSearchSettings()
 
-  let rawJs = getRawJs()
-  rawJs = replacePlaceholders(rawJs, {
+  return replacePlaceholders(rawScripts, {
     bookmarks: JSON.stringify(bookmarkGroups),
     searchEngine: engine,
     searchLookup: JSON.stringify(forwardingLookup || {}),
   })
-
-  return rawJs
 }

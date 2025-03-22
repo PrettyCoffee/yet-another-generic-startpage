@@ -1,7 +1,7 @@
 import { ChangeEvent, useState, DragEvent } from "react"
 
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { Upload } from "react-feather"
 
 import { VisuallyHidden } from "./VisuallyHidden"

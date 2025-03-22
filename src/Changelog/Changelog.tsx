@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 
 import { Section, Surface } from "../components"
 import { useGeneralSettings } from "../Providers"

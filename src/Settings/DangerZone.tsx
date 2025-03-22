@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { useStoragePrefix } from "@startpage/local-storage"
 
 import { Button, Section, TextInput } from "../components"

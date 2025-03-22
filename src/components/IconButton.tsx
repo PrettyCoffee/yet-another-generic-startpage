@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { Icon } from "react-feather"
 
 import { VisuallyHidden } from "."

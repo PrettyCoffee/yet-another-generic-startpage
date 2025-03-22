@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react"
 
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 
 const Title = styled.h2`
   ${({ theme: { color, space } }) => css`

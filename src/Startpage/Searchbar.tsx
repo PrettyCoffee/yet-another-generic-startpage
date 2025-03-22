@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
 
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { useBookmarks } from "@startpage/bookmarks"
 import { performSearch } from "@startpage/search"
 import { Search } from "react-feather"

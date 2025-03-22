@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react"
 
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { Disclosure } from "@headlessui/react"
 import { ChevronDown, ChevronRight } from "react-feather"
 

@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 import { BookmarkGroup, useBookmarks } from "@startpage/bookmarks"
 
 import { useFontSize } from "../Providers"

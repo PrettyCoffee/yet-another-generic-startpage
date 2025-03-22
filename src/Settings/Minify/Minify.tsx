@@ -4,29 +4,28 @@ import { Button, Section } from "../../components"
 import { useCustomCss } from "../../Providers/CustomCss"
 import { Note } from "../fragments/Note"
 import {
-  getMiniYagsFile,
   useMiniCssVars,
   useMiniHtml,
   useMiniJs,
   downloadBlob,
 } from "./utils"
 
+import { rawStyles, rawFavicon } from "./utils/rawFiles"
+
 export const Minify = () => {
   const [customCss] = useCustomCss()
   const miniHtml = useMiniHtml()
   const miniJs = useMiniJs()
   const miniCssVars = useMiniCssVars()
-  const miniStyles = getMiniYagsFile("styles.css")
-  const miniFavicon = getMiniYagsFile("favicon.ico")
 
-  const download = () => {
+  const download = async () => {
     const zip = new JSZip()
     zip.file("index.html", miniHtml)
     zip.file("scripts.js", miniJs)
     zip.file("variables.css", miniCssVars)
     zip.file("custom-styles.css", customCss)
-    zip.file("styles.css", miniStyles)
-    zip.file("favicon.ico", miniFavicon)
+    zip.file("styles.css", rawStyles)
+    zip.file("favicon.ico", rawFavicon)
 
     zip
       .generateAsync({ type: "blob" })

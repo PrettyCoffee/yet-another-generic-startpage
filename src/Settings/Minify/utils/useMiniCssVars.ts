@@ -2,10 +2,8 @@ import { useBookmarks } from "@startpage/bookmarks"
 import { useTheme } from "@startpage/theming"
 
 import { useGeneralSettings, useSurfaceSettings } from "../../../Providers"
-import { getMiniYagsFile } from "./getMiniYagsFile"
 import { replacePlaceholders } from "./replacePlaceholders"
-
-const getRawCssVars = () => getMiniYagsFile("variables.css")
+import { rawCssVars } from "./rawFiles"
 
 const objectToString = (object: any) => {
   const vars: string[] = []
@@ -44,9 +42,7 @@ export const useMiniCssVars = () => {
   const colorVars = getCssVarsFromObject({ color }, ["name", "palette"])
   const spaceVars = getCssVarsFromObject({ space }, [])
 
-  const rawCss = getRawCssVars()
-
-  return replacePlaceholders(rawCss, {
+  return replacePlaceholders(rawCssVars, {
     colors: colorVars,
     spacing: spaceVars,
     maxWidth: maxWidth + "px",

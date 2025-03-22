@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/macro"
+import styled from "@emotion/styled"
 
 export const SwitchButton = styled.button`
   position: relative;
