@@ -15,35 +15,35 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@headlessui/react": "^1.7.19",
-    "@startpage/bookmarks": "^0.2.6",
-    "@startpage/local-storage": "^0.2.6",
-    "@startpage/preset": "^0.2.5",
-    "@startpage/search": "^0.2.0",
-    "@startpage/theming": "^0.2.6",
-    "color": "^5.0.0",
-    "jszip": "^3.10.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-error-boundary": "^5.0.0",
-    "react-feather": "^2.0.10"
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@headlessui/react": "1.7.19",
+    "@startpage/bookmarks": "0.2.6",
+    "@startpage/local-storage": "0.2.6",
+    "@startpage/preset": "0.2.5",
+    "@startpage/search": "0.2.0",
+    "@startpage/theming": "0.2.6",
+    "color": "5.0.0",
+    "jszip": "3.10.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-error-boundary": "5.0.0",
+    "react-feather": "2.0.10"
   },
   "devDependencies": {
-    "@emotion/eslint-plugin": "^11.12.0",
-    "@pretty-cozy/eslint-config": "^0.6.0",
-    "@types/color": "^4.2.0",
-    "@types/node": "^22.13.11",
+    "@emotion/eslint-plugin": "11.12.0",
+    "@pretty-cozy/eslint-config": "0.6.0",
+    "@types/color": "4.2.0",
+    "@types/node": "22.13.11",
     "@types/react": "18.3.19",
     "@types/react-dom": "18.3.5",
-    "@vitejs/plugin-react": "^4.3.4",
-    "gh-pages": "^6.3.0",
-    "typescript": "^5.8.2",
+    "@vitejs/plugin-react": "4.3.4",
+    "gh-pages": "6.3.0",
+    "typescript": "5.8.2",
     "vite": "^6.2.2"
   },
   "overrides": {
-    "eslint": "^9"
+    "eslint": "9.23.0"
   },
   "browserslist": {
     "production": [
