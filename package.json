@@ -40,7 +40,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "gh-pages": "^6.3.0",
     "typescript": "^5.8.2",
-    "vite": "^6.2.2"
+    "vite": "^6.4.1"
   },
   "overrides": {
     "eslint": "^9"
