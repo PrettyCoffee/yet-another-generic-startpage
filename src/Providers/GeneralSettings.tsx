@@ -9,5 +9,5 @@ export const {
 
 export const useFontSize = () => {
   const [{ fontSize }] = useGeneralSettings()
-  return fontSize ?? initialGeneralSettings.fontSize
+  return fontSize || initialGeneralSettings.fontSize
 }

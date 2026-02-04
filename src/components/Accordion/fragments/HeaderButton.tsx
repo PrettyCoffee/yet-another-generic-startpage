@@ -67,11 +67,9 @@ export const HeaderButton = ({
   open,
   label,
   children,
-}: PropsWithChildren<HeaderButtonProps>) => {
-  return (
-    <Button label={label}>
-      <CaretLayout>{open ? <ChevronDown /> : <ChevronRight />}</CaretLayout>
-      {children}
-    </Button>
-  )
-}
+}: PropsWithChildren<HeaderButtonProps>) => (
+  <Button label={label}>
+    <CaretLayout>{open ? <ChevronDown /> : <ChevronRight />}</CaretLayout>
+    {children}
+  </Button>
+)

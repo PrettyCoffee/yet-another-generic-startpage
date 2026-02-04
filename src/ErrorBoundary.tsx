@@ -49,29 +49,27 @@ const getLSContent = () => {
   return result
 }
 
-const DeleteButtons = () => {
-  const deleteKey = (key: string) => {
-    localStorage.removeItem(key)
-    location.reload()
-  }
-
-  const resetLocalStorage = () => {
-    localStorage.clear()
-    location.reload()
-  }
-  return (
-    <>
-      <div>
-        {prefixedKeys.map(key => (
-          <Button key={key} onClick={() => deleteKey(key)}>
-            Delete {key}
-          </Button>
-        ))}
-      </div>
-      <Button onClick={resetLocalStorage}>Reset startpage entirely</Button>
-    </>
-  )
+const deleteKey = (key: string) => {
+  localStorage.removeItem(key)
+  location.reload()
 }
+
+const resetLocalStorage = () => {
+  localStorage.clear()
+  location.reload()
+}
+const DeleteButtons = () => (
+  <>
+    <div>
+      {prefixedKeys.map(key => (
+        <Button key={key} onClick={() => deleteKey(key)}>
+          Delete {key}
+        </Button>
+      ))}
+    </div>
+    <Button onClick={resetLocalStorage}>Reset startpage entirely</Button>
+  </>
+)
 
 const ErrorFallback = ({ error }: FallbackProps) => (
   <Wrapper>

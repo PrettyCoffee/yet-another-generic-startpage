@@ -20,7 +20,7 @@ const Title = styled.h3`
   margin: 0;
 `
 
-const findNewKey = (object: Record<string, string>) => {
+const findNewKey = (object: Record<string, string | undefined>) => {
   const baseKey = "#new"
   if (object[baseKey] === undefined) return baseKey
 

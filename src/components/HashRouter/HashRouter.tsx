@@ -2,7 +2,7 @@ import { FC } from "react"
 
 import { useUrlHash } from "./utils/useUrlHash"
 
-export type HashRoutes = Record<string, FC>
+export type HashRoutes = Record<string, FC | undefined>
 
 interface HashRouterProps {
   defaultContent: FC

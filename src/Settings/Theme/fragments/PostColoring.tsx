@@ -37,6 +37,7 @@ export const PostColoring = () => {
     group: "primary" | "secondary",
     shade: keyof ColorGradient,
     color: string
+    // eslint-disable-next-line sonarjs/no-identical-functions -- the type of shade makes the difference
   ) => {
     if (theme.color[group][shade] !== color) {
       const cpy = { ...theme }

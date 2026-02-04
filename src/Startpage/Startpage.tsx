@@ -18,15 +18,13 @@ const Content = styled.div`
   `}
 `
 
-export const Startpage = () => {
-  return (
-    <Surface>
-      <Image />
-      <Content>
-        <Headline />
-        <Searchbar />
-        <Bookmarks />
-      </Content>
-    </Surface>
-  )
-}
+export const Startpage = () => (
+  <Surface>
+    <Image />
+    <Content>
+      <Headline />
+      <Searchbar />
+      <Bookmarks />
+    </Content>
+  </Surface>
+)

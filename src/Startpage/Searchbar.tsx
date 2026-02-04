@@ -62,7 +62,6 @@ export const Searchbar = () => {
       <Input
         value={value}
         placeholder={placeholder}
-        /* eslint-disable-next-line jsx-a11y/no-autofocus */
         autoFocus
         onChange={setValue}
         onKeyDown={key => key === "Enter" && handleSearch()}

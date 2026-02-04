@@ -31,8 +31,7 @@
     "react-feather": "2.0.10"
   },
   "devDependencies": {
-    "@emotion/eslint-plugin": "11.12.0",
-    "@pretty-cozy/eslint-config": "0.6.0",
+    "@pretty-cozy/eslint-config": "0.8.0",
     "@types/color": "4.2.0",
     "@types/node": "22.13.11",
     "@types/react": "18.3.19",
@@ -41,9 +40,6 @@
     "gh-pages": "6.3.0",
     "typescript": "5.8.2",
     "vite": "6.4.1"
-  },
-  "overrides": {
-    "eslint": "9.23.0"
   },
   "browserslist": {
     "production": [

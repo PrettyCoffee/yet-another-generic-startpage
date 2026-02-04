@@ -22,10 +22,10 @@ export const EditMode = ({ label, onSave, onAbort }: EditModeProps) => {
       <div>
         <IconButton
           icon={Save}
-          label={`Save changes`}
+          label="Save changes"
           onClick={() => onSave(newLabel)}
         />
-        <IconButton icon={X} label={`Discard changes`} onClick={onAbort} />
+        <IconButton icon={X} label="Discard changes" onClick={onAbort} />
       </div>
     </TitleLayout>
   )

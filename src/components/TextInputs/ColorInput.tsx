@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
@@ -48,8 +48,6 @@ export const ColorInput = ({ label, value, onChange }: ColorInputProps) => {
     setColor(value)
     if (isColor(value)) onChange(value)
   }
-
-  useEffect(() => setColor(value), [value])
 
   return (
     <Wrapper color={color}>

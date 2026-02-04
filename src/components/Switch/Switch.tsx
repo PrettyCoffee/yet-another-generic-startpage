@@ -16,9 +16,7 @@ const Label = styled.label(() => {
   `
 })
 
-const LabelText = styled.span(() => {
-  return css``
-})
+const LabelText = styled.span``
 
 export interface CheckedProp {
   checked: boolean
