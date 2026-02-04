@@ -13,7 +13,7 @@ export const initialCustomCss = `/* You can put any css in here. For example:
 `
 
 export const initialGeneralSettings = {
-  img: "https://e4p7c9i3.stackpathcdn.com/wp-content/uploads/2019/05/tumblr_p320aq1osj1vjxiz1o1_1280.gif?iv=344",
+  img: "https://raw.githubusercontent.com/PrettyCoffee/yet-another-generic-startpage/refs/heads/main/public/default.gif",
   title: "Yet another generic startpage",
   displayImg: true,
   font: "Quicksand",
