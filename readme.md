@@ -51,7 +51,7 @@ Note: This setup may change over time, if Github changes things, but the idea sh
 
 ### Full startpage (no Mini Yags)
 
-Required Knowledge: `git`, `github`, `npm`, `node`
+Required Knowledge: `git`, `github`, `node`, `npm`, `pnpm`
 
 Instead of building a `Mini Yags` copy you can also host your own copy of the full startpage, including the settings window. This will allow you to customize the startpage later on.
 
@@ -59,11 +59,11 @@ To set it up with github pages:
 
 1. Fork the repository in github
 2. Clone it to your local machine
-3. Run `npm i` and `npm run build` in the project directory
+3. Run `pnpm i` and `pnpm run build` in the project directory
 4. Deploy it on Github pages with one of the following methods:
 
    - Use the deploy script:
-     1. Run `npm run deploy`, this will create a `gh-pages` and push the required files into the branch
+     1. Run `pnpm run deploy`, this will create a `gh-pages` and push the required files into the branch
      2. Select the `gh-pages` branch as the source branch in the `pages` settings
    - Make the setup manually:
      1. Copy the files from the `/build` directory into a new branch

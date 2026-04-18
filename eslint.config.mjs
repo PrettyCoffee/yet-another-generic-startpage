@@ -15,8 +15,8 @@ export default defineConfig([
   {
     name: "local-rules",
     rules: {
-      "checkFile/filename-naming-convention": "off",
-      "checkFile/folder-naming-convention": "off",
+      "check-file/filename-naming-convention": "off",
+      "check-file/folder-naming-convention": "off",
       "@typescript-eslint/no-dynamic-delete": "off",
       "react/no-unescaped-entities": "off",
     },
