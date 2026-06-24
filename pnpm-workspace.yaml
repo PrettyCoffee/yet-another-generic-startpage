@@ -6,3 +6,6 @@ preferFrozenLockfile: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1 # https://github.com/npm/node-semver/issues/838
+minimumReleaseAgeExclude:
+  # Renovate security update: vite@6.4.3
+  - vite@6.4.3
