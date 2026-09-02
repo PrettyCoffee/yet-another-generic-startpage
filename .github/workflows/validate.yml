@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.3.1
+        uses: actions/checkout@v4.4.0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4.4.0
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4.4.0
         with:
-          node-version: "24.18.0"
+          node-version: "24.20.0"
           cache: "pnpm"
 
       - name: Install dependencies
